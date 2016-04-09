@@ -13,6 +13,9 @@ public class PlaceDetail {
     private Double longitude;
     private String formatted_phone_number;
 
+    private String rating;
+    private String website;
+
     public String getId() {
         return id;
     }
@@ -43,6 +46,22 @@ public class PlaceDetail {
 
     public String getPhone() {return formatted_phone_number;}
 
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
     static PlaceDetail jsonToPontoReferencia(JSONObject pontoReferencia) {
         try {
             PlaceDetail result = new PlaceDetail();
@@ -52,6 +71,8 @@ public class PlaceDetail {
             result.setLongitude((Double) location.get("lng"));
             result.setId(pontoReferencia.getString("id"));
             result.setPhone(pontoReferencia.getString("formatted_phone_number"));
+            result.setRating(pontoReferencia.getString("rating"));
+            result.setWebsite(pontoReferencia.getString("website"));
             return result;
         } catch (JSONException ex) {
             Logger.getLogger(PlaceDetail.class.getName()).log(Level.SEVERE, null, ex);
@@ -61,7 +82,7 @@ public class PlaceDetail {
 
     @Override
     public String toString() {
-        return "PlaceDetail{" + "id=" + id + ", latitude=" + latitude + ", longitude=" + longitude + ", phone =" + formatted_phone_number + '}';
+        return "PlaceDetail{" + "id=" + id + ", latitude=" + latitude + ", longitude=" + longitude + ", phone =" + formatted_phone_number + ", rating =" + rating + ", website =" + website + '}';
     }
 
 }

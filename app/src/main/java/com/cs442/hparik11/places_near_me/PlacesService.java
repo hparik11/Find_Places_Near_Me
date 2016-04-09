@@ -52,6 +52,8 @@ public class PlacesService {
                     DetailService = new PlaceDetailService(API_KEY);
                     placedetail = DetailService.getPlaceDetail(place.getPlaceid());
                     place.setPhone(placedetail.getPhone());
+                    place.setRating(placedetail.getRating());
+                    place.setWebsite(placedetail.getWebsite());
                     arrayList.add(place);
                 } catch (Exception e) {
                 }

@@ -83,20 +83,7 @@
             android:name=".PoiSelectionActivity"
             android:label="@string/title_activity_poi_selection">
 
-        </activity>
-        <activity
-            android:name=".ShowImg"
-            android:label="@string/title_activity_show_img">
-
-        </activity>
-        <activity
-            android:name=".ShowImg2"
-            android:label="@string/title_activity_show_img2">
-
-        </activity>
-        <activity
-            android:name=".ShowImg3"
-            android:label="@string/title_activity_show_img3">
+        </activity>s
 
         </activity>
         -->

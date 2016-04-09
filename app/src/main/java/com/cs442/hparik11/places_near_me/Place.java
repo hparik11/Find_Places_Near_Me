@@ -21,6 +21,8 @@ public class Place implements Serializable {
     private Double longitude;
     private String placeid;
     private String phone;
+    private String rating;
+    private String website;
 
     public Place() {
     }
@@ -89,6 +91,23 @@ public class Place implements Serializable {
         this.phone = phone;
     }
 
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+
     static Place jsonToPontoReferencia(JSONObject pontoReferencia) {
         try {
             Place result = new Place();
@@ -110,7 +129,17 @@ public class Place implements Serializable {
 
     @Override
     public String toString() {
-        return "Place{" + "id=" + id + ", icon=" + icon + ", name=" + name + ", latitude=" + latitude + ", longitude=" + longitude + '}';
+        return "Place{" + "id=" + id +
+                ", icon=" + icon +
+                ", name=" + name +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", longitude=" + longitude +
+                ", placeid=" + placeid +
+                ", phone=" + phone +
+                ", rating=" + rating +
+                ", website=" + website +
+                '}';
     }
 
 }
