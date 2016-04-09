@@ -122,7 +122,7 @@ public class GooglePlacesActivity extends FragmentActivity implements OnMapReady
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        mMap.getUiSettings().setZoomControlsEnabled(true);
 
         moveMap(origin);
         addMarker(origin, "Current Location", "Life Science");
@@ -138,6 +138,7 @@ public class GooglePlacesActivity extends FragmentActivity implements OnMapReady
 
             return;
         }
+        mMap.setMyLocationEnabled(true);
         Intent intent = getIntent();
         Place newPlace = (Place) intent.getSerializableExtra("SelectedPlace");
         if (newPlace != null) {
@@ -323,14 +324,14 @@ public class GooglePlacesActivity extends FragmentActivity implements OnMapReady
 
 
 
-    public void onZoom(View view) {
+    /*public void onZoom(View view) {
         if(view.getId() == R.id.Bzoomin) {
             mMap.animateCamera(CameraUpdateFactory.zoomIn());
         }
         if(view.getId() == R.id.Bzoomout) {
             mMap.animateCamera(CameraUpdateFactory.zoomOut());
         }
-    }
+    }*/
 
     public void changeType(View view) {
         if (mMap.getMapType() == GoogleMap.MAP_TYPE_NORMAL) {

@@ -17,10 +17,7 @@ import java.text.DecimalFormat;
 
 public class Details_Place extends AppCompatActivity {
 
-    private EditText Address,Dist,Contact,Website;
-    private TextView Name;
-
-    private LatLng origin;
+    private EditText Website;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +28,7 @@ public class Details_Place extends AppCompatActivity {
 
         Intent intent = getIntent();
         Place newPlace = (Place) intent.getSerializableExtra("SelectedPlace");
-        Log.d("Place_Details", String.valueOf(newPlace.getLongitude()) + " " + String.valueOf(newPlace.getLatitude()));
+        //Log.d("Place_Details", String.valueOf(newPlace.getLongitude()) + " " + String.valueOf(newPlace.getLatitude()));
 
 
 
@@ -43,23 +40,21 @@ public class Details_Place extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        Dist = (EditText) findViewById(R.id.txtDist);
-        Address = (EditText) findViewById(R.id.txtAddress);
-        Contact = (EditText) findViewById(R.id.txtCont);
-        Name = (TextView) findViewById(R.id.txtName);
+
+        EditText dist1 = (EditText) findViewById(R.id.txtDist);
+        EditText address = (EditText) findViewById(R.id.txtAddress);
+        EditText contact = (EditText) findViewById(R.id.txtCont);
+        TextView name = (TextView) findViewById(R.id.txtName);
 
 
-
-        origin = new LatLng(41.838598, -87.627383);
+        LatLng origin = new LatLng(41.838598, -87.627383);
         LatLng destPosition = new LatLng(newPlace.getLatitude(), newPlace.getLongitude());
         String dist = CalculationByDistance(origin,destPosition);
-        Dist.setText(dist + " km");
-        Address.setText(newPlace.getVicinity());
-        Contact.setText(newPlace.getPhone());
-        Name.setText(newPlace.getName());
 
-
-
+        dist1.setText(dist + " miles");
+        address.setText(newPlace.getVicinity());
+        contact.setText(newPlace.getPhone());
+        name.setText(newPlace.getName());
 
 
     }
@@ -87,8 +82,8 @@ public class Details_Place extends AppCompatActivity {
         Log.i("Radius Value", "" + valueResult + "   KM  " + kmInDec
                 + " Meter   " + meterInDec);
 
-        String kmValue = String.format("%.2f",km);
-        return kmValue;
+        String mileValue = String.format("%.2f",km*1.60934);
+        return mileValue;
     }
 
 }

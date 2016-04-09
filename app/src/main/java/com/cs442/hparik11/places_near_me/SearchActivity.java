@@ -10,10 +10,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+
 import java.util.ArrayList;
 
 public class SearchActivity extends Activity {
@@ -81,7 +81,7 @@ public class SearchActivity extends Activity {
 
     }
 
-    private class ShowAddresses extends AsyncTask<ArrayAdapter<String>, ArrayAdapter<String>, ArrayAdapter<String> > {
+    /*private class ShowAddresses extends AsyncTask<ArrayAdapter<String>, ArrayAdapter<String>, ArrayAdapter<String> > {
 
         @Override
         protected ArrayAdapter<String>  doInBackground(ArrayAdapter<String>... params) {
@@ -93,7 +93,7 @@ public class SearchActivity extends Activity {
         protected void onPostExecute(ArrayAdapter<String> result) {
             result.notifyDataSetChanged();
         }
-    }
+    }*/
 
     private void getAddresses () {
         EditText tLocation = (EditText)findViewById(R.id.tAddress);

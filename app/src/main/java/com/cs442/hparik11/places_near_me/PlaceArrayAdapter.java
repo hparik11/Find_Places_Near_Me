@@ -12,6 +12,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.model.LatLng;
+
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 
@@ -64,7 +67,12 @@ public class PlaceArrayAdapter extends BaseAdapter {
         final Place itemInfo = items.get(position);
         Log.d("@@Latitude", String.valueOf(itemInfo.getLatitude()));
         Log.d("@@Longitude", String.valueOf(itemInfo.getLongitude()));
-        holder.tvContent.setText(itemInfo.getName() /*+ "\n" + itemInfo.getVicinity()*/);
+
+        LatLng origin = new LatLng(41.838598, -87.627383);
+        LatLng destPosition = new LatLng(itemInfo.getLatitude(), itemInfo.getLongitude());
+        String dist = CalculationByDistance(origin,destPosition);
+
+        holder.tvContent.setText(itemInfo.getName() + "\n" + dist + " miles");
 
         holder.btInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +122,33 @@ public class PlaceArrayAdapter extends BaseAdapter {
 
         return convertView;
     }
+    public String CalculationByDistance(LatLng StartP, LatLng EndP) {
+        int Radius = 6371;// radius of earth in Km
+        double lat1 = StartP.latitude;
+        double lat2 = EndP.latitude;
+        double lon1 = StartP.longitude;
+        double lon2 = EndP.longitude;
+        double dLat = Math.toRadians(lat2 - lat1);
+        double dLon = Math.toRadians(lon2 - lon1);
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2)
+                + Math.cos(Math.toRadians(lat1))
+                * Math.cos(Math.toRadians(lat2)) * Math.sin(dLon / 2)
+                * Math.sin(dLon / 2);
+        double c = 2 * Math.asin(Math.sqrt(a));
+        double valueResult = Radius * c;
+        double km = valueResult / 1;
+        DecimalFormat newFormat = new DecimalFormat("####");
+        int kmInDec = Integer.valueOf(newFormat.format(km));
+        double meter = valueResult % 1000;
+        int meterInDec = Integer.valueOf(newFormat.format(meter));
+        Log.i("Radius Value", "" + valueResult + "   KM  " + kmInDec
+                + " Meter   " + meterInDec);
+
+        String mileValue = String.format("%.2f",km*1.60934);
+        return mileValue;
+    }
+
+
 
     public class ViewHolder {
         public TextView tvContent;
