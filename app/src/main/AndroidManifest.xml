@@ -127,18 +127,6 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-<<<<<<< HEAD
-=======
-        <!--
-      <activity android:name=".ShowPlacesActivity">
-
-        </activity>
-      <activity
-            android:name=".PoiSelectionActivity"
-            android:label="@string/title_activity_poi_selection">
-
-        </activity>s
->>>>>>> 79c22be974af38f8ea2fcc038cc8bf041ac820a0
 
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
