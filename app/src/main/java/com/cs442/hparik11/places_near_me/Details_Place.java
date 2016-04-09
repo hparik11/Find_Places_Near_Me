@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -45,7 +46,8 @@ public class Details_Place extends AppCompatActivity {
         EditText address = (EditText) findViewById(R.id.txtAddress);
         EditText contact = (EditText) findViewById(R.id.txtCont);
         TextView name = (TextView) findViewById(R.id.txtName);
-
+        RatingBar rating = (RatingBar) findViewById(R.id.ratingBar);
+        EditText website = (EditText) findViewById(R.id.txtWeb);
 
         LatLng origin = new LatLng(41.838598, -87.627383);
         LatLng destPosition = new LatLng(newPlace.getLatitude(), newPlace.getLongitude());
@@ -55,6 +57,8 @@ public class Details_Place extends AppCompatActivity {
         address.setText(newPlace.getVicinity());
         contact.setText(newPlace.getPhone());
         name.setText(newPlace.getName());
+        rating.setRating(Float.valueOf(newPlace.getRating()));
+        website.setText(newPlace.getWebsite());
 
 
     }
