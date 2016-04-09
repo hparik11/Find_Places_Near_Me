@@ -117,6 +117,7 @@
     <string name="track_user">Track the User</string>
     <string name="title_activity_tracker_user">Tracking location of user</string>
     <string name="title_activity_navigation_drawer">Find Places Near me</string>
+    <string name="title_activity_details__place">Details_Place</string>
 </resources>
 
 

@@ -1,23 +1,18 @@
 package com.cs442.hparik11.places_near_me;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
+import android.widget.BaseAdapter;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.ArrayList;
-import android.graphics.Color;
-
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
-
-import org.w3c.dom.Document;
 
 
 public class PlaceArrayAdapter extends BaseAdapter {
@@ -59,6 +54,7 @@ public class PlaceArrayAdapter extends BaseAdapter {
             holder.tvContent = (TextView) convertView.findViewById(R.id.tvContent);
             holder.btCall = (ImageButton) convertView.findViewById(R.id.btCall);
             holder.btDirection = (ImageButton) convertView.findViewById(R.id.btDirection);
+            holder.btInfo = (ImageButton) convertView.findViewById(R.id.btInfo);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -66,31 +62,25 @@ public class PlaceArrayAdapter extends BaseAdapter {
 
 
         final Place itemInfo = items.get(position);
-        holder.tvContent.setText(itemInfo.getName() + "\n" + itemInfo.getVicinity());
+        Log.d("@@Latitude", String.valueOf(itemInfo.getLatitude()));
+        Log.d("@@Longitude", String.valueOf(itemInfo.getLongitude()));
+        holder.tvContent.setText(itemInfo.getName() /*+ "\n" + itemInfo.getVicinity()*/);
+
+        holder.btInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent infoIntent = new Intent(mycontext, Details_Place.class);
+                Bundle mBundle = new Bundle();
+                mBundle.putSerializable("SelectedPlace", itemInfo);
+                infoIntent.putExtras(mBundle);
+                infoIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                v.getContext().startActivity(infoIntent);
+
+            }
+        });
 
 
-        /*
-        String addressLine = getItem(position).getName();
-        addressLine += "\n";
-        addressLine += getItem(position).getVicinity();
-        addressLine += "\n";
-        addressLine += getItem(position).getPhone();
-        addressLine += "\n";
-        addressLine += getItem(position).getLatitude() + "," + getItem(position).getLongitude();
-
-        TextView rowAddress = new TextView(mycontext);
-
-        if(items.get(position) != null )
-        {
-            rowAddress.setTextColor(Color.WHITE);
-            rowAddress.setText(addressLine);
-            rowAddress.setBackgroundColor(Color.RED);
-            int color = Color.argb( 200, 255, 64, 64 );
-            rowAddress.setBackgroundColor( color );
-
-        }
-        return rowAddress;
-        */
 
         holder.btCall.setOnClickListener(new View.OnClickListener() {
 
@@ -102,6 +92,7 @@ public class PlaceArrayAdapter extends BaseAdapter {
                 v.getContext().startActivity(phoneIntent);
             }
         });
+
         holder.btDirection.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -128,6 +119,7 @@ public class PlaceArrayAdapter extends BaseAdapter {
         public TextView tvContent;
         public ImageButton btCall;
         public ImageButton btDirection;
+        public ImageButton btInfo;
     }
 
 }

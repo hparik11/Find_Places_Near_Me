@@ -3,12 +3,12 @@ package com.cs442.hparik11.places_near_me;
 /**
  * Created by harsh on 4/5/16.
  */
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 
 public class Place implements Serializable {
@@ -88,6 +88,7 @@ public class Place implements Serializable {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
     static Place jsonToPontoReferencia(JSONObject pontoReferencia) {
         try {
             Place result = new Place();

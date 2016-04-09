@@ -233,7 +233,6 @@ public class TrackingUser extends FragmentActivity {
 		}		
 	}
 	
-	/** A class to parse the Google Places in JSON format */
     private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String,String>>> >{
     	
     	// Parsing the data in non-ui thread    	

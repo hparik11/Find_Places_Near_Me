@@ -3,8 +3,6 @@ package com.cs442.hparik11.places_near_me;
 /**
  * Created by harsh on 4/5/16.
  */
-import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,10 +16,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-/**
- *  Create request for Places API.
- *
- */
 public class PlacesService {
 
     private String API_KEY;
@@ -58,7 +52,6 @@ public class PlacesService {
                     DetailService = new PlaceDetailService(API_KEY);
                     placedetail = DetailService.getPlaceDetail(place.getPlaceid());
                     place.setPhone(placedetail.getPhone());
-                    Log.v("Places Services ", "" + place);
                     arrayList.add(place);
                 } catch (Exception e) {
                 }

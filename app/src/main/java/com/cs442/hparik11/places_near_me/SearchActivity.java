@@ -188,7 +188,7 @@ public class SearchActivity extends Activity {
 
         @Override
         protected ArrayList<Place> doInBackground(Void... arg0) {
-            PlacesService service = new PlacesService("AIzaSyBAsU2YP6fGQcRNne5c772-Y6H3J3gD2Us");
+            PlacesService service = new PlacesService("AIzaSyC0eOv4pn7xPPauCtkVE960iG3UM_O-ZSc");
             ArrayList<Place> findPlaces = service.findPlaces(41.843730, -87.621782, places, radius);
 
             for (int i = 0; i < findPlaces.size(); i++) {

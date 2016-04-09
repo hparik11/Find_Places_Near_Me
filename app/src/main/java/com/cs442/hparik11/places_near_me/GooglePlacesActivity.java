@@ -82,8 +82,8 @@ public class GooglePlacesActivity extends FragmentActivity implements OnMapReady
         }
 
         Drawable drawable = getResources().getDrawable(R.drawable.ic_menu_search);
-        drawable.setBounds(0, 0, (int)(drawable.getIntrinsicWidth()*0.5),
-                (int)(drawable.getIntrinsicHeight()*0.5));
+        drawable.setBounds(0, 0, (int) (drawable.getIntrinsicWidth() * 0.5),
+                (int) (drawable.getIntrinsicHeight() * 0.5));
         ScaleDrawable sd = new ScaleDrawable(drawable, 0, 1, 1);
         bSearch = (Button)findViewById(R.id.Bsearch);
         bSearch.setCompoundDrawables(sd.getDrawable(), null, null, null);
@@ -107,12 +107,15 @@ public class GooglePlacesActivity extends FragmentActivity implements OnMapReady
         });
 
         origin = new LatLng(41.838598, -87.627383);
+
+
     }
 
 
     private void setUpMapIfNeeded() {
         return;
     }
+
 
 
 
@@ -410,7 +413,7 @@ public class GooglePlacesActivity extends FragmentActivity implements OnMapReady
 
         @Override
         protected ArrayList<Place> doInBackground(Void... arg0) {
-            PlacesService service = new PlacesService("AIzaSyBAsU2YP6fGQcRNne5c772-Y6H3J3gD2Us");
+            PlacesService service = new PlacesService("AIzaSyC0eOv4pn7xPPauCtkVE960iG3UM_O-ZSc");
             ArrayList<Place> findPlaces = service.findPlaces(41.843730, -87.621782, places, radius);
 
             for (int i = 0; i < findPlaces.size(); i++) {
@@ -420,6 +423,11 @@ public class GooglePlacesActivity extends FragmentActivity implements OnMapReady
             }
             return findPlaces;
         }
+
+
+
+
+
 
     }
 
