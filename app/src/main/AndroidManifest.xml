@@ -13,14 +13,13 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/places_near"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -49,19 +48,6 @@
 
         </activity>
 
-
-
-        <!--<activity-->
-            <!--android:name=".Home_Screen"-->
-            <!--android:label="Find_Places_Near_Me">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
-
-
         <activity
             android:name=".GooglePlacesActivity"
             android:label="@string/title_activity_maps">
@@ -83,24 +69,6 @@
 
 
         <activity
-            android:name=".List_Items_Details"
-            android:label="List">
-            <intent-filter>
-                <action android:name="com.cs442.hparik11.places_near_me.List_Items_Details" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".new_list"
-            android:label="Details">
-            <intent-filter>
-                <action android:name="com.cs442.hparik11.places_near_me.new_list" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".SearchActivity"
             android:launchMode="singleTop">
             <intent-filter>
@@ -111,10 +79,10 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-        <activity android:name=".ShowPlacesActivity">
+        <!--  <activity android:name=".ShowPlacesActivity">
 
         </activity>
-        <activity
+      <activity
             android:name=".PoiSelectionActivity"
             android:label="@string/title_activity_poi_selection">
 
@@ -133,7 +101,7 @@
             android:name=".ShowImg3"
             android:label="@string/title_activity_show_img3">
 
-        </activity>
+        </activity>-->
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.

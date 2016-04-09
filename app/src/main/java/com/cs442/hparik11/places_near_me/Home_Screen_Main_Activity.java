@@ -73,9 +73,7 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -92,7 +90,7 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         Intent intent = new Intent(Home_Screen_Main_Activity.this, GooglePlacesActivity.class);
-        Intent intent1 = new Intent(Home_Screen_Main_Activity.this, List_Items_Details.class);
+        //Intent intent1 = new Intent(Home_Screen_Main_Activity.this, List_Items_Details.class);
 
         if (id == R.id.nav_home) {
 
@@ -112,8 +110,6 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
         } else if (id == R.id.nav_atm) {
 
             intent.putExtra("Category","ATM");
-
-
             startActivity(intent);
             setResult(1, intent);
 
@@ -122,8 +118,6 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
         } else if (id == R.id.nav_gas) {
 
             intent.putExtra("Category","Gas Station");
-
-
             startActivity(intent);
             setResult(1, intent);
 

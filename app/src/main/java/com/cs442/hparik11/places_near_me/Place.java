@@ -3,6 +3,7 @@ package com.cs442.hparik11.places_near_me;
 /**
  * Created by harsh on 4/5/16.
  */
+import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -10,13 +11,19 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class Place {
+public class Place implements Serializable {
+    private static final long serialVersionUID = -7060210544600464481L;
     private String id;
     private String icon;
     private String name;
     private String vicinity;
     private Double latitude;
     private Double longitude;
+    private String placeid;
+    private String phone;
+
+    public Place() {
+    }
 
     public String getId() {
         return id;
@@ -66,6 +73,21 @@ public class Place {
         this.vicinity = vicinity;
     }
 
+    public String getPlaceid() {
+        return placeid;
+    }
+
+    public void setPlaceid(String placeid) {
+        this.placeid = placeid;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
     static Place jsonToPontoReferencia(JSONObject pontoReferencia) {
         try {
             Place result = new Place();
@@ -76,6 +98,7 @@ public class Place {
             result.setIcon(pontoReferencia.getString("icon"));
             result.setName(pontoReferencia.getString("name"));
             result.setVicinity(pontoReferencia.getString("vicinity"));
+            result.setPlaceid(pontoReferencia.getString("place_id"));
             result.setId(pontoReferencia.getString("id"));
             return result;
         } catch (JSONException ex) {

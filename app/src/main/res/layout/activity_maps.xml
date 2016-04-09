@@ -17,34 +17,42 @@
 
 
         <EditText
-            android:layout_width="183dp"
+            android:layout_width="266dp"
             android:layout_height="wrap_content"
-            android:id="@+id/TFaddress" />
-        <Button
+            android:id="@+id/TFaddress"
+            />
+       <!-- <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search"
-            android:id="@+id/Bsearch"
+
             android:layout_gravity="right"
-            android:onClick="onSearch" />
+             />-->
         <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Change View"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/Bsearch"
+            android:onClick="onSearch"/>
+
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:id="@+id/Btype"
-            android:layout_gravity="right"
-            android:nestedScrollingEnabled="false"
             android:onClick="changeType" />
+
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools" android:layout_width="329dp"
-            android:layout_height="537dp" android:id="@+id/map" tools:context=".MapsActivity"
+            android:layout_height="537dp" android:id="@+id/map" tools:context=".GooglePlacesActivity"
             android:name="com.google.android.gms.maps.SupportMapFragment" />
         <LinearLayout
             android:layout_width="wrap_content"
