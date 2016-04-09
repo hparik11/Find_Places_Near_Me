@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.cs442.hparik11.places_near_me.Details_Place"
+    tools:context="com.mad.hparik11.places_near_me.Details_Place"
     tools:showIn="@layout/activity_details_place">
 
 
@@ -55,7 +55,7 @@
             android:id="@+id/textView3" />
 
         <EditText
-            android:layout_width="170dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:id="@+id/txtAddress" />
 
@@ -83,7 +83,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:weightSum="1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -93,11 +94,12 @@
             android:id="@+id/textView5" />
 
         <EditText
-            android:layout_width="175dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:inputType="textPostalAddress"
             android:ems="10"
-            android:id="@+id/txtWeb" />
+            android:id="@+id/txtWeb"
+             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"

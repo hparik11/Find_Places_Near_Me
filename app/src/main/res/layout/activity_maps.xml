@@ -18,7 +18,7 @@
 
         <EditText
             android:layout_width="266dp"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:id="@+id/TFaddress"
             />
        <!-- <Button
@@ -29,20 +29,23 @@
 
             android:layout_gravity="right"
              />-->
-        <Button
+        <ImageButton
             style="?android:attr/buttonStyleSmall"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:id="@+id/Bsearch"
-            android:onClick="onSearch"/>
+            android:onClick="onSearch"
+            android:src="@drawable/ic_menu_search" />
 
 
-        <Button
+        <ImageButton
             style="?android:attr/buttonStyleSmall"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:id="@+id/Btype"
-            android:onClick="changeType" />
+            android:onClick="changeType"
+            android:src="@drawable/street_view"
+            android:layout_marginStart="5dp"/>
 
     </LinearLayout>
 
@@ -52,7 +55,7 @@
 
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools" android:layout_width="360dp"
-            android:layout_height="537dp" android:id="@+id/map" tools:context=".GooglePlacesActivity"
+            android:layout_height="547dp" android:id="@+id/map" tools:context=".GooglePlacesActivity"
             android:name="com.google.android.gms.maps.SupportMapFragment" />
         <LinearLayout
             android:layout_width="wrap_content"

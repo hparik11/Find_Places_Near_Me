@@ -1,4 +1,4 @@
-package com.cs442.hparik11.places_near_me;
+package com.mad.hparik11.places_near_me;
 
 import org.junit.Test;
 

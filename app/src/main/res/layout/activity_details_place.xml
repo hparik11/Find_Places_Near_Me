@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.cs442.hparik11.places_near_me.Details_Place">
+    tools:context="com.mad.hparik11.places_near_me.Details_Place">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

@@ -11,14 +11,15 @@
         android:layout_height="45dp"
         android:id="@+id/tAddress"
         android:inputType="text" />
-    <Button
+    <ImageButton
         style="?android:attr/buttonStyleSmall"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:id="@+id/bSearch"
         android:layout_gravity="right"
         android:layout_above="@+id/listView1"
-        android:layout_toEndOf="@+id/tAddress" />
+        android:layout_toEndOf="@+id/tAddress"
+        android:src="@drawable/list_menu" />
 
         <!--android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"-->

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".Home_Screen_Main_Activity"
-    android:background="@drawable/background_img">
+    android:background="@drawable/loginbackground">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
