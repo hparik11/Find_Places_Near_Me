@@ -91,8 +91,6 @@ public class Place implements Serializable {
         this.phone = phone;
     }
 
-
-
     public String getWebsite() {
               return website;
     }

@@ -20,17 +20,17 @@ import java.util.ArrayList;
 public class SearchActivity extends Activity {
     private ImageButton bSearch;
 
-    private Geocoder geocoder;
     private ArrayList<Place> list;
     private PlaceArrayAdapter adapter;
     private ListView myListView;
     private EditText address;
 
+    private PlaceSqliteController placeController;
+
     @Override
     protected void onCreate(android.os.Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        geocoder= new Geocoder(this);
         setContentView(R.layout.activity_search);
 
         //final ArrayList<String> todoItems = new ArrayList<String>();
@@ -80,7 +80,7 @@ public class SearchActivity extends Activity {
         adapter = new PlaceArrayAdapter(getApplicationContext(), list);
         myListView.setAdapter(adapter);
 
-
+        placeController = new PlaceSqliteController(getApplicationContext());
     }
 
     private class ShowAddresses extends AsyncTask<ArrayAdapter<String>, ArrayAdapter<String>, ArrayAdapter<String> > {
@@ -196,7 +196,19 @@ public class SearchActivity extends Activity {
             for (int i = 0; i < findPlaces.size(); i++) {
 
                 Place placeDetail = findPlaces.get(i);
-                Log.e("MAPS", "places : " + placeDetail.getName());
+                //Log.e("MAPS", "places : " + placeDetail.getName());
+                placeController.insertplace(
+                        placeDetail.getLongitude(),
+                        placeDetail.getLatitude(),
+                        placeDetail.getId(),
+                        placeDetail.getIcon(),
+                        placeDetail.getName(),
+                        placeDetail.getVicinity(),
+                        placeDetail.getPlaceid(),
+                        placeDetail.getPhone(),
+                        placeDetail.getRating(),
+                        placeDetail.getWebsite()
+                );
             }
             return findPlaces;
         }
