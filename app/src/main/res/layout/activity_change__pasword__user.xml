@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/loginbackground"
+    tools:context="com.mad.project.team3.places_near_me.Change_Pasword_User">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/oldpwd"
+        android:textColor="#ffffff"
+        android:inputType="textPassword"
+        android:textColorHint="#ffffff"
+        android:hint="Enter old Password"
+        android:layout_marginTop="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newpwd"
+        android:textColor="#ffffff"
+        android:inputType="textPassword"
+        android:textColorHint="#ffffff"
+        android:hint="Enter New Password"
+        android:layout_below="@+id/oldpwd" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:onClick="clicked"
+        android:background="@drawable/buttonshape"
+        android:shadowRadius="5"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:text="Reset"
+        android:shadowDy="0"
+        android:textColor="#FFFFFF"
+        android:id="@+id/button11"
+        android:layout_below="@+id/newpwd"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp" />
+</RelativeLayout>

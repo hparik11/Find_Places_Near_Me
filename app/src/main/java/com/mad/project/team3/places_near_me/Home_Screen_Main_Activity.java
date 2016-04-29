@@ -91,9 +91,9 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
 
-            intent.putExtra("Category", "");
-            startActivity(intent);
-            setResult(1, intent);
+//            intent.putExtra("Category", "");
+//            startActivity(intent);
+//            setResult(1, intent);
 
             startActivity(intent);
 
@@ -135,7 +135,10 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
         }
         else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_manage) {
+            Intent i = new Intent(Home_Screen_Main_Activity.this, Change_Pasword_User.class);
+            startActivity(i);
+            setResult(1, i);
 
         }
 

@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 03d696b3a02bf80cc0927f6559280ec6276a0d81
 package com.mad.project.team3.places_near_me;
 
 import android.content.ContentValues;
@@ -13,28 +9,9 @@ import android.util.Log;
 
 public class PlaceSqliteController extends SQLiteOpenHelper {
     private static final String LOGCAT = null;
-<<<<<<< HEAD
 
     /** Version number of the database */
     private static int VERSION = 3;
-=======
-    /** Database name */
-    private static String DBNAME = "placedb";
-    /*
-        private String id;
-        private String icon;
-        private String name;
-        private String vicinity;
-        private Double latitude;
-        private Double longitude;
-        private String placeid;
-        private String phone;
-        private String rating;
-        private String website;
-     */
-    /** Version number of the database */
-    private static int VERSION = 1;
->>>>>>> 03d696b3a02bf80cc0927f6559280ec6276a0d81
 
     /** Field 1 of the table locations, which is the primary key */
     public static final String FIELD_ROW_ID = "_id";
@@ -50,7 +27,6 @@ public class PlaceSqliteController extends SQLiteOpenHelper {
     public static final String FIELD_WEB = "website";
 
     /** A constant, stores the the table name */
-<<<<<<< HEAD
     private static final String DATABASE_TABLE = "Places_details";
 
     /** An instance variable for SQLiteDatabase */
@@ -63,17 +39,6 @@ public class PlaceSqliteController extends SQLiteOpenHelper {
         super(context, "places.db", null, VERSION);
         Log.d("TTTTTTTT", "TTTTTT");
         this.context = context;
-=======
-    private static final String DATABASE_TABLE = "places";
-
-    /** An instance variable for SQLiteDatabase */
-    private SQLiteDatabase mDB;
-
-    /** Constructor */
-    public PlaceSqliteController(Context context) {
-        super(context, DBNAME, null, VERSION);
-        this.mDB = getWritableDatabase();
->>>>>>> 03d696b3a02bf80cc0927f6559280ec6276a0d81
     }
 
     /** This is a callback method, invoked when the method getReadableDatabase() / getWritableDatabase() is called
@@ -81,18 +46,12 @@ public class PlaceSqliteController extends SQLiteOpenHelper {
      * */
     @Override
     public void onCreate(SQLiteDatabase db) {
-<<<<<<< HEAD
         //Log.d("TTTTTTTT","TTTTTT");
         String sql = "create table " + DATABASE_TABLE + " ( " +
-=======
-
-        String sql =     "create table " + DATABASE_TABLE + " ( " +
->>>>>>> 03d696b3a02bf80cc0927f6559280ec6276a0d81
                 FIELD_ROW_ID + " integer primary key autoincrement , " +
                 FIELD_LNG + " double not null, " +
                 FIELD_LAT + " double not null, " +
                 FIELD_ID + " text not null," +
-<<<<<<< HEAD
                 FIELD_ICN + " text," +
                 FIELD_NAM + " text not null," +
                 FIELD_VCT + " text," +
@@ -101,16 +60,6 @@ public class PlaceSqliteController extends SQLiteOpenHelper {
                 FIELD_RAT + " text," +
                 FIELD_WEB + " text" +
                 ")";
-=======
-                FIELD_ICN + " text ," +
-                FIELD_NAM + " text not null," +
-                FIELD_VCT + " text ," +
-                FIELD_PID + " text ," +
-                FIELD_PHN + " text ," +
-                FIELD_RAT + " text ," +
-                FIELD_WEB + " text " +
-                " ) ";
->>>>>>> 03d696b3a02bf80cc0927f6559280ec6276a0d81
 
         db.execSQL(sql);
         Log.d(LOGCAT, "Table Created");
@@ -147,20 +96,7 @@ public class PlaceSqliteController extends SQLiteOpenHelper {
     }
 
     public void insertplace(Double lng,Double lat,String id,String icn,String nam,String vct, String pid,String phn, String rat, String web) {
-<<<<<<< HEAD
 
-=======
-        /*  FIELD_LNG
-            FIELD_LAT
-            FIELD_ID
-            FIELD_ICN
-            FIELD_NAM
-            FIELD_VCT
-            FIELD_PID
-            FIELD_PHN
-            FIELD_RAT
-            FIELD_WEB   */
->>>>>>> 03d696b3a02bf80cc0927f6559280ec6276a0d81
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("lng",lng);

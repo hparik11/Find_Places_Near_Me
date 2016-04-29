@@ -3,7 +3,6 @@ package com.mad.project.team3.places_near_me;
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,10 +74,9 @@ public class ImageAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View item_view = layoutInflater.inflate(R.layout.swipe_layout,container,false);
-        TextView tv = (TextView) item_view.findViewById(R.id.rest);
+        TextView tv = (TextView) item_view.findViewById(R.id.txtView);
         tv.setSelected(true);
-        tv.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        tv.setSingleLine(true);
+
         ImageView imageView = (ImageView) item_view.findViewById(R.id.rest_view);
 
         TextView txtView = (TextView) item_view.findViewById(R.id.restName);

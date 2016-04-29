@@ -11,7 +11,7 @@
     <string name="title_activity_signup_success">signup_success</string>
     <string name="app_id">196763187364664</string>
     <string name="title_activity_app__start">App_Start</string>
-
+    <string name="title_activity_user_details__admin">User_details_Admin</string>
 
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -125,8 +125,6 @@
     <string name="title_activity_tracker_user">Tracking location of user</string>
     <string name="title_activity_navigation_drawer">Home Screen</string>
     <string name="title_activity_details__place">Place Details</string>
-
-    <string name="descr_image">Image</string>
 </resources>
 
 

@@ -7,10 +7,8 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality. 
     -->
-    <!-- Include following permission if you load images from Internet -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- Include following permission if you want to cache images on SD card -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -18,6 +16,11 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+	
+    <permission
+        android:name="android.permission.INTERACT_ACROSS_USERS_FULL"
+        android:protectionLevel="signature" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/places_near"
@@ -69,7 +72,6 @@
             android:name=".Changepassword_screen"
             android:label="@string/title_activity_changepassword_screen"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".Login_Page"
             android:label="@string/title_activity_login__page"
@@ -82,6 +84,11 @@
             android:name=".Signup_Success"
             android:label="@string/title_activity_signup_success"
             android:theme="@style/AppTheme.NoActionBar" />
+
+
+
+
+
 
         <activity
             android:name="com.mad.project.team3.places_near_me.Home_Screen_Main_Activity"
@@ -135,7 +142,11 @@
             android:name="com.mad.project.team3.places_near_me.Details_Place"
             android:label="@string/title_activity_details__place"
             android:theme="@style/AppTheme.NoActionBar"/>
-
+	<activity
+            android:name=".User_details_Admin"
+            android:label="@string/title_activity_user_details__admin"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Change_Pasword_User"></activity>
     </application>
 
 </manifest>

@@ -13,22 +13,22 @@
     tools:context="com.mad.project.team3.places_near_me.Admin_Console"
     tools:showIn="@layout/activity_admin__console">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="User Details"
-        android:id="@+id/textView8"
-        android:layout_below="@+id/button10"
-        android:layout_alignParentStart="true" />
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/display_listview"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:dividerHeight="10.0sp"
+        android:layout_below="@+id/button10"></ListView>
     <Button
 
-        android:text="Admin Logout"
+        android:text="Logout"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:layout_width="270dp"
-        android:layout_height="60dp"
+        android:textSize="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/buttonshape"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
@@ -36,30 +36,8 @@
         android:onClick="adminlogout"
         android:shadowRadius="5"
         android:id="@+id/button10"
-        android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/textView10"
-        android:layout_toRightOf="@+id/textView8"
-        android:layout_toEndOf="@+id/textView8" />
+        android:layout_alignParentTop="true" />
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Fname   Lname   Dob   Country   Sex   Email   Uname"
-        android:id="@+id/textView10"
-        android:textStyle="bold"
-        android:layout_marginTop="58dp"
-        android:layout_below="@+id/textView8"
-        android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Shiv Krish 27/05/90 india M srk@gmail.com unam1"
-        android:id="@+id/textView11"
-
-        android:layout_below="@+id/textView10"
-        android:layout_marginTop="52dp"
-        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

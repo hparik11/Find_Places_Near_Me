@@ -65,7 +65,7 @@ public class Entry_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
 
-        setContentView(R.layout.activity_entry);
+        setContentView(R.layout.activity_entry_);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         LoginButton loginButton=(LoginButton)findViewById(R.id.imageButton2);
