@@ -3,6 +3,7 @@ package com.mad.project.team3.places_near_me;
 /**
  * Created by harsh on 4/5/16.
  */
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,6 +18,7 @@ public class Place implements Serializable {
     private String icon;
     private String name;
     private String vicinity;
+    private String photoreference;
     private Double latitude;
     private Double longitude;
     private String placeid;
@@ -75,6 +77,14 @@ public class Place implements Serializable {
         this.vicinity = vicinity;
     }
 
+    public String getPhotoreference() {
+        return photoreference;
+    }
+
+    public void setPhotoreference(String photoreference) {
+        this.photoreference = photoreference;
+    }
+
     public String getPlaceid() {
         return placeid;
     }
@@ -112,6 +122,15 @@ public class Place implements Serializable {
             Place result = new Place();
             JSONObject geometry = (JSONObject) pontoReferencia.get("geometry");
             JSONObject location = (JSONObject) geometry.get("location");
+            if (pontoReferencia.has("photos")) {
+                JSONArray photos = (JSONArray) pontoReferencia.get("photos");
+                JSONObject photo = photos.getJSONObject(0);
+
+                result.setPhotoreference((String)photo.get("photo_reference"));
+            }
+            else {
+                result.setPhotoreference("");
+            }
             result.setLatitude((Double) location.get("lat"));
             result.setLongitude((Double) location.get("lng"));
             result.setIcon(pontoReferencia.getString("icon"));

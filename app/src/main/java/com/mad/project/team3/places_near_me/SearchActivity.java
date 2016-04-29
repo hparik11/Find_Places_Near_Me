@@ -1,6 +1,7 @@
 package com.mad.project.team3.places_near_me;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ScaleDrawable;
@@ -12,18 +13,28 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
-
 import java.util.ArrayList;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 public class SearchActivity extends Activity {
     private ImageButton bSearch;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 03d696b3a02bf80cc0927f6559280ec6276a0d81
     private ArrayList<Place> list;
     private PlaceArrayAdapter adapter;
     private ListView myListView;
     private EditText address;
 
+<<<<<<< HEAD
     PlaceSqliteController placeController;
+=======
+    private PlaceSqliteController placeController;
+>>>>>>> 03d696b3a02bf80cc0927f6559280ec6276a0d81
 
     @Override
     protected void onCreate(android.os.Bundle savedInstanceState) {
@@ -78,8 +89,28 @@ public class SearchActivity extends Activity {
         adapter = new PlaceArrayAdapter(getApplicationContext(), list);
         myListView.setAdapter(adapter);
 
+        placeController = new PlaceSqliteController(getApplicationContext());
 
+        initImageLoader(getApplicationContext());
+    }
+
+<<<<<<< HEAD
         //Log.d("TTTTTTTT", "TTTTTT");
+=======
+    /**初始化图片加载类配置信息**/
+    public static void initImageLoader(Context context) {
+        // This configuration tuning is custom. You can tune every option, you may tune some of them,
+        // or you can create default configuration by ImageLoaderConfiguration.createDefault(this); method.
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
+                .threadPriority(Thread.NORM_PRIORITY - 2)//加载图片的线程数
+                .denyCacheImageMultipleSizesInMemory() //解码图像的大尺寸将在内存中缓存先前解码图像的小尺寸。
+                .discCacheFileNameGenerator(new Md5FileNameGenerator())//设置磁盘缓存文件名称
+                .tasksProcessingOrder(QueueProcessingType.LIFO)//设置加载显示图片队列进程
+                .writeDebugLogs() // Remove for release app
+                .build();
+        // Initialize ImageLoader with configuration.
+        ImageLoader.getInstance().init(config);
+>>>>>>> 03d696b3a02bf80cc0927f6559280ec6276a0d81
     }
 
     private class ShowAddresses extends AsyncTask<ArrayAdapter<String>, ArrayAdapter<String>, ArrayAdapter<String> > {
@@ -104,7 +135,6 @@ public class SearchActivity extends Activity {
 
 
     }
-
 
     private class GetPlaces extends AsyncTask<Void, Void, ArrayList<Place>> {
         private String places;
@@ -186,11 +216,19 @@ public class SearchActivity extends Activity {
         @Override
         protected ArrayList<Place> doInBackground(Void... arg0) {
             PlacesService service = new PlacesService("AIzaSyBAsU2YP6fGQcRNne5c772-Y6H3J3gD2Us");
+<<<<<<< HEAD
             ArrayList<Place> findplaces = service.findPlaces(41.843730, -87.621782, places, radius);
 
             for (int i = 0; i < findplaces.size(); i++) {
 
                 Place placeDetail = findplaces.get(i);
+=======
+            ArrayList<Place> findPlaces = service.findPlaces(41.843730, -87.621782, places, radius);
+
+            for (int i = 0; i < findPlaces.size(); i++) {
+
+                Place placeDetail = findPlaces.get(i);
+>>>>>>> 03d696b3a02bf80cc0927f6559280ec6276a0d81
                 //Log.e("MAPS", "places : " + placeDetail.getName());
                 placeController.insertplace(
                         placeDetail.getLongitude(),
@@ -209,10 +247,17 @@ public class SearchActivity extends Activity {
         }
 
     }
+
     public boolean onSearchRequested() {
         EditText tLocation = (EditText)findViewById(R.id.tAddress);
         String sLocation = tLocation.getText().toString();
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        ImageLoader.getInstance().stop();
+        super.onBackPressed();
     }
 }
