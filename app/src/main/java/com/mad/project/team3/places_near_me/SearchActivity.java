@@ -1,25 +1,26 @@
 package com.mad.project.team3.places_near_me;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ScaleDrawable;
-import android.location.Geocoder;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
-
 import java.util.ArrayList;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 public class SearchActivity extends Activity {
     private ImageButton bSearch;
-
     private ArrayList<Place> list;
     private PlaceArrayAdapter adapter;
     private ListView myListView;
@@ -81,6 +82,23 @@ public class SearchActivity extends Activity {
         myListView.setAdapter(adapter);
 
         placeController = new PlaceSqliteController(getApplicationContext());
+
+        initImageLoader(getApplicationContext());
+    }
+
+    /**初始化图片加载类配置信息**/
+    public static void initImageLoader(Context context) {
+        // This configuration tuning is custom. You can tune every option, you may tune some of them,
+        // or you can create default configuration by ImageLoaderConfiguration.createDefault(this); method.
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
+                .threadPriority(Thread.NORM_PRIORITY - 2)//加载图片的线程数
+                .denyCacheImageMultipleSizesInMemory() //解码图像的大尺寸将在内存中缓存先前解码图像的小尺寸。
+                .discCacheFileNameGenerator(new Md5FileNameGenerator())//设置磁盘缓存文件名称
+                .tasksProcessingOrder(QueueProcessingType.LIFO)//设置加载显示图片队列进程
+                .writeDebugLogs() // Remove for release app
+                .build();
+        // Initialize ImageLoader with configuration.
+        ImageLoader.getInstance().init(config);
     }
 
     private class ShowAddresses extends AsyncTask<ArrayAdapter<String>, ArrayAdapter<String>, ArrayAdapter<String> > {
@@ -105,7 +123,6 @@ public class SearchActivity extends Activity {
 
 
     }
-
 
     private class GetPlaces extends AsyncTask<Void, Void, ArrayList<Place>> {
         private String places;
@@ -214,6 +231,7 @@ public class SearchActivity extends Activity {
         }
 
     }
+
     public boolean onSearchRequested() {
         EditText tLocation = (EditText)findViewById(R.id.tAddress);
         String sLocation = tLocation.getText().toString();
@@ -243,5 +261,11 @@ public class SearchActivity extends Activity {
             md = new GMapV2Direction(sourcePosition, destPosition, GMapV2Direction.MODE_WALKING);
             md.execute(); */
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        ImageLoader.getInstance().stop();
+        super.onBackPressed();
     }
 }
