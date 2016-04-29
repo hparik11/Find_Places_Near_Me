@@ -31,7 +31,7 @@ public class SqliteController extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase database) {
         String query;
-        query = "CREATE TABLE user_details ( firstname TEXT, lastname TEXT,dob TEXT,country TEXT,sex TEXT,email TEXT,uname TEXT,password TEXT)";
+        query = "CREATE TABLE user_details (firstname TEXT, lastname TEXT,dob TEXT,country TEXT,sex TEXT,email TEXT,uname TEXT,password TEXT)";
         database.execSQL(query);
         Log.d(LOGCAT, "Table Created");
     }

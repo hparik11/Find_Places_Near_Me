@@ -7,39 +7,41 @@
     <TextView
         android:id="@+id/tvContent"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="45dp"
         android:textColor="@android:color/black"
         android:text="content"
         android:textSize="15sp"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" />
 
     <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:id="@+id/btCall"
         android:src="@drawable/phone_app_icon"
-
+        android:background="@android:color/transparent"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="200dp" />
+        android:layout_toLeftOf="@+id/btDirection"
+        android:layout_marginRight="3dp"/>
 
     <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:id="@+id/btDirection"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/btCall"
+        android:layout_toLeftOf="@+id/btInfo"
         android:src="@drawable/directions"
-        android:layout_marginStart="5dp"/>
+        android:background="@android:color/transparent"
+        android:layout_marginRight="3dp"/>
 
     <ImageButton
-        android:layout_width="55dp"
-        android:layout_height="55dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:id="@+id/btInfo"
         android:layout_alignParentTop="true"
         android:src="@drawable/information"
-        android:layout_toEndOf="@+id/btDirection"
-        android:layout_marginStart="5dp"/>
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:layout_marginRight="3dp"/>
 
 </RelativeLayout>

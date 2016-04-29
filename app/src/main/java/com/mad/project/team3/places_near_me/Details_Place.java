@@ -44,10 +44,10 @@ public class Details_Place extends AppCompatActivity {
 
         EditText dist1 = (EditText) findViewById(R.id.txtDist);
         EditText address = (EditText) findViewById(R.id.txtAddress);
-        EditText contact = (EditText) findViewById(R.id.txtCont);
+        TextView contact = (TextView) findViewById(R.id.txtCont);
         TextView name = (TextView) findViewById(R.id.txtName);
         RatingBar rating = (RatingBar) findViewById(R.id.ratingBar);
-        EditText website = (EditText) findViewById(R.id.txtWeb);
+        TextView website = (TextView) findViewById(R.id.txtWeb);
 
 
         LatLng origin = new LatLng(41.838598, -87.627383);
@@ -58,7 +58,10 @@ public class Details_Place extends AppCompatActivity {
         address.setText(newPlace.getVicinity());
         contact.setText(newPlace.getPhone());
         name.setText(newPlace.getName());
-        rating.setRating(Float.valueOf(newPlace.getRating()));
+        if (newPlace.getRating().equals(""))
+            rating.setRating(0);
+        else
+            rating.setRating(Float.valueOf(newPlace.getRating()));
         website.setText(newPlace.getWebsite());
 
     }

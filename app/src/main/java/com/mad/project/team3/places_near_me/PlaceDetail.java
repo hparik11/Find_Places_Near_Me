@@ -11,9 +11,9 @@ public class PlaceDetail {
     private String id;
     private Double latitude;
     private Double longitude;
-    private String formatted_phone_number;
-    private String rating;
-    private String website;
+    private String formatted_phone_number = "";
+    private String rating = "";
+    private String website = "";
 
     public String getId() {
         return id;
@@ -45,7 +45,6 @@ public class PlaceDetail {
 
     public String getPhone() {return formatted_phone_number;}
 
-
     public String getRating() {
                 return rating;
     }
@@ -69,10 +68,14 @@ public class PlaceDetail {
             JSONObject location = (JSONObject) geometry.get("location");
             result.setLatitude((Double) location.get("lat"));
             result.setLongitude((Double) location.get("lng"));
-            result.setId(pontoReferencia.getString("id"));
-            result.setPhone(pontoReferencia.getString("formatted_phone_number"));
-            result.setRating(pontoReferencia.getString("rating"));
-            result.setWebsite(pontoReferencia.getString("website"));
+            if (pontoReferencia.has("id"))
+                result.setId(pontoReferencia.getString("id"));
+            if (pontoReferencia.has("formatted_phone_number"))
+                result.setPhone(pontoReferencia.getString("formatted_phone_number"));
+            if (pontoReferencia.has("rating"))
+                result.setRating(pontoReferencia.getString("rating"));
+            if (pontoReferencia.has("website"))
+                result.setWebsite(pontoReferencia.getString("website"));
             return result;
         } catch (JSONException ex) {
             Logger.getLogger(PlaceDetail.class.getName()).log(Level.SEVERE, null, ex);

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -94,10 +95,14 @@ public class PlaceArrayAdapter extends BaseAdapter {
 
             @Override
             public void onClick(View v) {
-                Intent phoneIntent = new Intent("android.intent.action.CALL",
-                    Uri.parse("tel:" + itemInfo.getPhone()));
-                phoneIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                v.getContext().startActivity(phoneIntent);
+                if (itemInfo.getPhone() != "") {
+                    Intent phoneIntent = new Intent("android.intent.action.CALL",
+                            Uri.parse("tel:" + itemInfo.getPhone()));
+                    phoneIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    v.getContext().startActivity(phoneIntent);
+                }
+                else
+                    Toast.makeText(mycontext, "No phone numbers", Toast.LENGTH_SHORT).show();
             }
         });
 

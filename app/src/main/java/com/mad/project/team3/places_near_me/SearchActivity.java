@@ -4,10 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ScaleDrawable;
-import android.location.Geocoder;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,19 +18,19 @@ import java.util.ArrayList;
 public class SearchActivity extends Activity {
     private ImageButton bSearch;
 
-    private Geocoder geocoder;
     private ArrayList<Place> list;
     private PlaceArrayAdapter adapter;
     private ListView myListView;
     private EditText address;
 
+    PlaceSqliteController placeController;
+
     @Override
     protected void onCreate(android.os.Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        geocoder= new Geocoder(this);
         setContentView(R.layout.activity_search);
-
+        placeController = new PlaceSqliteController(this);
         //final ArrayList<String> todoItems = new ArrayList<String>();
         //final ArrayAdapter<String> aa = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,todoItems);
         myListView = (ListView)findViewById(R.id.listView1);
@@ -81,6 +79,7 @@ public class SearchActivity extends Activity {
         myListView.setAdapter(adapter);
 
 
+        //Log.d("TTTTTTTT", "TTTTTT");
     }
 
     private class ShowAddresses extends AsyncTask<ArrayAdapter<String>, ArrayAdapter<String>, ArrayAdapter<String> > {
@@ -181,55 +180,39 @@ public class SearchActivity extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            //dialog = new ProgressDialog(getApplicationContext());
-            //dialog.setCancelable(false);
-            //dialog.setMessage("Loading..");
-            //dialog.isIndeterminate();
-            //dialog.show();
+
         }
 
         @Override
         protected ArrayList<Place> doInBackground(Void... arg0) {
             PlacesService service = new PlacesService("AIzaSyBAsU2YP6fGQcRNne5c772-Y6H3J3gD2Us");
-            ArrayList<Place> findPlaces = service.findPlaces(41.843730, -87.621782, places, radius);
+            ArrayList<Place> findplaces = service.findPlaces(41.843730, -87.621782, places, radius);
 
-            for (int i = 0; i < findPlaces.size(); i++) {
+            for (int i = 0; i < findplaces.size(); i++) {
 
-                Place placeDetail = findPlaces.get(i);
-                Log.e("MAPS", "places : " + placeDetail.getName());
+                Place placeDetail = findplaces.get(i);
+                //Log.e("MAPS", "places : " + placeDetail.getName());
+                placeController.insertplace(
+                        placeDetail.getLongitude(),
+                        placeDetail.getLatitude(),
+                        placeDetail.getId(),
+                        placeDetail.getIcon(),
+                        placeDetail.getName(),
+                        placeDetail.getVicinity(),
+                        placeDetail.getPlaceid(),
+                        placeDetail.getPhone(),
+                        placeDetail.getRating(),
+                        placeDetail.getWebsite()
+                );
             }
-            return findPlaces;
+            return findplaces;
         }
 
     }
     public boolean onSearchRequested() {
         EditText tLocation = (EditText)findViewById(R.id.tAddress);
         String sLocation = tLocation.getText().toString();
-        //ArrayList<Address> addressList = null;
-        /*if (sLocation != null || !sLocation.equals("")) {
-            Geocoder geocoder = new Geocoder(this);
-            try {
-                addressList = geocoder.getFromLocationName(sLocation, 5);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            for(int i = 0; i<addressList.size(); i++) {
-                Log.d(String.valueOf(addressList.get(i).getAdminArea()), "AdminArea");
-                Log.d(String.valueOf(addressList.get(i).getLatitude()), "Latitude");
-                Log.d(String.valueOf(addressList.get(i).getLongitude()), "Longitude");
-                Log.d(String.valueOf(addressList.get(i).getPhone()), "Phone");
-                Log.d(String.valueOf(addressList.get(i).getPostalCode()), "PostalCode");
-            }
-            Address address = addressList.get(0);
-            LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
-            mMap.addMarker(new MarkerOptions().position(latLng).title("Marker"));
-            mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-            mMap = ((SupportMapFragment) getSupportFragmentManager()
-                    .findFragmentById(com.example.fshen4.CS442_Places_Near_Me.R.id.map)).getMap();
-            LatLng sourcePosition = new LatLng(41.843730, -87.621782);
-            LatLng destPosition = new LatLng(41.864909, -87.666747);
-            md = new GMapV2Direction(sourcePosition, destPosition, GMapV2Direction.MODE_WALKING);
-            md.execute(); */
+
         return true;
     }
 }
