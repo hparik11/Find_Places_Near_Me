@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/loginbackground"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.mad.project.team3.places_near_me.Entry_Activity"
+    tools:showIn="@layout/activity_entry">
+
+    <com.facebook.login.widget.LoginButton
+        xmlns:fb="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/imageButton2"
+        android:clickable="true"
+        android:onClick="fblogin_with_rotate"
+        android:src="@drawable/fblogin"
+        android:layout_alignTop="@+id/imageButton"
+        android:text=""
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:paddingTop="40sp"
+        android:paddingBottom="40sp"
+        style="@style/FacebookLoginButton"
+        fb:com_facebook_login_text=""
+        fb:com_facebook_logout_text=""
+        android:layout_toStartOf="@+id/imageButton4"
+        />
+    <ImageButton
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:id="@+id/imageButton4"
+        android:clickable="true"
+        android:onClick="signup_with_rotate"
+        android:src="@drawable/su"
+        android:layout_alignTop="@+id/imageButton3"
+        android:layout_toEndOf="@+id/imageButton3"
+        android:layout_marginStart="58dp" />
+
+    <ImageButton
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:id="@+id/imageButton3"
+        android:src="@drawable/map"
+        android:clickable="true"
+        android:onClick="map_with_rotate"
+        android:layout_marginStart="54dp"
+        android:layout_below="@+id/imageButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="49dp" />
+
+    <AnalogClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/analogClock"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:onClick="login_with_rotate"
+        android:clickable="true"
+        android:src="@drawable/lgin"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/imageButton4" />
+
+</RelativeLayout>

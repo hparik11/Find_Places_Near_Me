@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="40dp"
+    android:background="@drawable/buttonshape"
+    android:layout_weight="1.0">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+
+        android:textSize="25px"
+
+        android:id="@+id/t_username"
+
+        android:layout_alignParentLeft="true"
+        android:text="UserName"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"
+         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/t_email"
+        android:textSize="25px"
+        android:textColor="@color/white"
+
+        android:text="Email"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_below="@+id/t_username"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>

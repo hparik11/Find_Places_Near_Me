@@ -2,11 +2,10 @@ package com.mad.project.team3.places_near_me;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -24,7 +23,12 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_navigation_drawer);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
+
+        PagerAdapter adapter = new ImageAdapter(this);
+        viewPager.setAdapter(adapter);
 
         Fragment1 fragment = new Fragment1();
         android.support.v4.app.FragmentTransaction fragmentTransaction =
@@ -35,14 +39,7 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -94,9 +91,9 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
 
-            intent.putExtra("Category", "");
-            startActivity(intent);
-            setResult(1, intent);
+//            intent.putExtra("Category", "");
+//            startActivity(intent);
+//            setResult(1, intent);
 
             startActivity(intent);
 
@@ -121,9 +118,27 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
             startActivity(intent);
             setResult(1, intent);
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_library) {
 
-        } else if (id == R.id.nav_send) {
+            intent.putExtra("Category", "Library");
+            startActivity(intent);
+            setResult(1, intent);
+
+
+        }else if (id == R.id.nav_custom) {
+
+            intent.putExtra("Category", "");
+            startActivity(intent);
+            setResult(1, intent);
+
+
+        }
+        else if (id == R.id.nav_share) {
+
+        } else if (id == R.id.nav_manage) {
+            Intent i = new Intent(Home_Screen_Main_Activity.this, Change_Pasword_User.class);
+            startActivity(i);
+            setResult(1, i);
 
         }
 

@@ -1,20 +1,27 @@
 package com.mad.project.team3.places_near_me;
 
 import android.content.Intent;
+import android.graphics.Paint;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
+
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Login_Page extends AppCompatActivity {
 
     EditText uname;
     EditText pwd;
+    TextView uflag;
     SqliteController controller = new SqliteController(this);
+    public static String global_uname;
+    public static String global_pwd;
    // Button signin;
     //Button changepwd;
     @Override
@@ -23,16 +30,10 @@ public class Login_Page extends AppCompatActivity {
         setContentView(R.layout.activity_login__page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        uflag=(TextView)findViewById(R.id.button7);
+        uflag.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
 
-            }
-        });
     }
 
     public void changepwd(View view)
@@ -84,13 +85,17 @@ public class Login_Page extends AppCompatActivity {
              }
             else {
 
+                 global_pwd=password;
+                         global_uname=username;
                  Toast.makeText(this, "User Validated", Toast.LENGTH_LONG).show();
+
                  Intent i = new Intent(Login_Page.this, Home_Screen_Main_Activity.class);
                  startActivity(i);
                  //intent to harsh Map module}
              }
         }
     }
+
     }
 
 

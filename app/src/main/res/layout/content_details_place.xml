@@ -73,11 +73,13 @@
             android:text="Contact"
             android:id="@+id/textView4" />
 
-        <EditText
+        <TextView
             android:layout_width="174dp"
             android:layout_height="wrap_content"
             android:id="@+id/txtCont"
-            android:layout_gravity="center_horizontal" />
+            android:autoLink="phone"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20dp"/>
 
     </LinearLayout>
     <LinearLayout
@@ -93,13 +95,16 @@
             android:text="Website"
             android:id="@+id/textView5" />
 
-        <EditText
+        <TextView
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:inputType="textPostalAddress"
             android:ems="10"
             android:id="@+id/txtWeb"
-             />
+            android:autoLink="all"
+            android:linksClickable="true"
+            android:textSize="20dp"/>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"

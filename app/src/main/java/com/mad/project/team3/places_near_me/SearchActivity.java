@@ -1,7 +1,6 @@
 package com.mad.project.team3.places_near_me;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ScaleDrawable;
@@ -13,27 +12,25 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+
 import java.util.ArrayList;
-import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 public class SearchActivity extends Activity {
     private ImageButton bSearch;
+
     private ArrayList<Place> list;
     private PlaceArrayAdapter adapter;
     private ListView myListView;
     private EditText address;
 
-    private PlaceSqliteController placeController;
+    PlaceSqliteController placeController;
 
     @Override
     protected void onCreate(android.os.Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_search);
-
+        placeController = new PlaceSqliteController(this);
         //final ArrayList<String> todoItems = new ArrayList<String>();
         //final ArrayAdapter<String> aa = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,todoItems);
         myListView = (ListView)findViewById(R.id.listView1);
@@ -81,24 +78,8 @@ public class SearchActivity extends Activity {
         adapter = new PlaceArrayAdapter(getApplicationContext(), list);
         myListView.setAdapter(adapter);
 
-        placeController = new PlaceSqliteController(getApplicationContext());
 
-        initImageLoader(getApplicationContext());
-    }
-
-    /**初始化图片加载类配置信息**/
-    public static void initImageLoader(Context context) {
-        // This configuration tuning is custom. You can tune every option, you may tune some of them,
-        // or you can create default configuration by ImageLoaderConfiguration.createDefault(this); method.
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
-                .threadPriority(Thread.NORM_PRIORITY - 2)//加载图片的线程数
-                .denyCacheImageMultipleSizesInMemory() //解码图像的大尺寸将在内存中缓存先前解码图像的小尺寸。
-                .discCacheFileNameGenerator(new Md5FileNameGenerator())//设置磁盘缓存文件名称
-                .tasksProcessingOrder(QueueProcessingType.LIFO)//设置加载显示图片队列进程
-                .writeDebugLogs() // Remove for release app
-                .build();
-        // Initialize ImageLoader with configuration.
-        ImageLoader.getInstance().init(config);
+        //Log.d("TTTTTTTT", "TTTTTT");
     }
 
     private class ShowAddresses extends AsyncTask<ArrayAdapter<String>, ArrayAdapter<String>, ArrayAdapter<String> > {
@@ -123,6 +104,7 @@ public class SearchActivity extends Activity {
 
 
     }
+
 
     private class GetPlaces extends AsyncTask<Void, Void, ArrayList<Place>> {
         private String places;
@@ -198,21 +180,17 @@ public class SearchActivity extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            //dialog = new ProgressDialog(getApplicationContext());
-            //dialog.setCancelable(false);
-            //dialog.setMessage("Loading..");
-            //dialog.isIndeterminate();
-            //dialog.show();
+
         }
 
         @Override
         protected ArrayList<Place> doInBackground(Void... arg0) {
             PlacesService service = new PlacesService("AIzaSyBAsU2YP6fGQcRNne5c772-Y6H3J3gD2Us");
-            ArrayList<Place> findPlaces = service.findPlaces(41.843730, -87.621782, places, radius);
+            ArrayList<Place> findplaces = service.findPlaces(41.843730, -87.621782, places, radius);
 
-            for (int i = 0; i < findPlaces.size(); i++) {
+            for (int i = 0; i < findplaces.size(); i++) {
 
-                Place placeDetail = findPlaces.get(i);
+                Place placeDetail = findplaces.get(i);
                 //Log.e("MAPS", "places : " + placeDetail.getName());
                 placeController.insertplace(
                         placeDetail.getLongitude(),
@@ -227,45 +205,14 @@ public class SearchActivity extends Activity {
                         placeDetail.getWebsite()
                 );
             }
-            return findPlaces;
+            return findplaces;
         }
 
     }
-
     public boolean onSearchRequested() {
         EditText tLocation = (EditText)findViewById(R.id.tAddress);
         String sLocation = tLocation.getText().toString();
-        //ArrayList<Address> addressList = null;
-        /*if (sLocation != null || !sLocation.equals("")) {
-            Geocoder geocoder = new Geocoder(this);
-            try {
-                addressList = geocoder.getFromLocationName(sLocation, 5);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            for(int i = 0; i<addressList.size(); i++) {
-                Log.d(String.valueOf(addressList.get(i).getAdminArea()), "AdminArea");
-                Log.d(String.valueOf(addressList.get(i).getLatitude()), "Latitude");
-                Log.d(String.valueOf(addressList.get(i).getLongitude()), "Longitude");
-                Log.d(String.valueOf(addressList.get(i).getPhone()), "Phone");
-                Log.d(String.valueOf(addressList.get(i).getPostalCode()), "PostalCode");
-            }
-            Address address = addressList.get(0);
-            LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
-            mMap.addMarker(new MarkerOptions().position(latLng).title("Marker"));
-            mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-            mMap = ((SupportMapFragment) getSupportFragmentManager()
-                    .findFragmentById(com.example.fshen4.CS442_Places_Near_Me.R.id.map)).getMap();
-            LatLng sourcePosition = new LatLng(41.843730, -87.621782);
-            LatLng destPosition = new LatLng(41.864909, -87.666747);
-            md = new GMapV2Direction(sourcePosition, destPosition, GMapV2Direction.MODE_WALKING);
-            md.execute(); */
-        return true;
-    }
 
-    @Override
-    public void onBackPressed() {
-        ImageLoader.getInstance().stop();
-        super.onBackPressed();
+        return true;
     }
 }
