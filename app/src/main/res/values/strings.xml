@@ -3,8 +3,8 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_admin__console">Admin_Console</string>
-    <string name="title_activity_changepassword_screen">Changepassword_screen</string>
+    <string name="title_activity_admin__console">Admin Console</string>
+    <string name="title_activity_changepassword_screen">Changepassword creen</string>
     <string name="title_activity_fbloginpage">Fbloginpage</string>
     <string name="title_activity_login__page">Login_Page</string>
     <string name="title_activity_passwordupdated">Passwordupdated</string>

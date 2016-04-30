@@ -5,15 +5,8 @@
         jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="3a4d71d19be2c1b38f2f774295cc6704e1ad59d1">
+        sha1="91e919fb032f94905b02ccc69b95bb15a69a2c6b">
         <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d9c1aedb9b26b0f528ce09c0dd9227c7e647690f/classes.dex" />
-    </item>
-    <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-8.4.0_c04a811b5dbb4d90ec7a49a11a0b940bdd633a81/classes.dex" />
     </item>
     <item
         jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.2.0/jars/classes.jar"
@@ -23,13 +16,6 @@
         <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.2.0_2f4b8a59032b5e1f5b64129f246b6dc7b2926b5c/classes.dex" />
     </item>
     <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/libs/internal_impl-23.0.0.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_8e9b821b04ec76aaa2fb98ecfd31c37f311e1743/classes.dex" />
-    </item>
-    <item
         jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
         jumboMode="true"
         revision="23.0.2"
@@ -37,32 +23,11 @@
         <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-8.4.0_4ccac631991f17b93f233373341da755b8443964/classes.dex" />
     </item>
     <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-8.4.0_ba39d3fbea18a233db11bd1e9e72cd16a7186ae7/classes.dex" />
-    </item>
-    <item
         jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/classes.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
         <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-23.0.0_046d661829491e15ccee8ba3b6bb0a88be2b40b3/classes.dex" />
-    </item>
-    <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="551e78f21acf69ebfb489c0e79647824c838013e">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-8.4.0_a6c00750c29642fbc26726a1f28c0dee8a0a5f3d/classes.dex" />
-    </item>
-    <item
-        jar="/home/harsh/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-tasks-1.4.0_5c3d3405698caff7eebcb23b36a7a22300ec5de5/classes.dex" />
     </item>
     <item
         jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
@@ -79,11 +44,11 @@
         <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-8.4.0_98d3d8ac28b34b0210792ecbabd70547bec8c297/classes.dex" />
     </item>
     <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.0/jars/classes.jar"
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/libs/universal-image-loader-1.9.5.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.2.0_c7c8ab34372c4f1e53757bc0328c48e724821aa3/classes.dex" />
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/2/universal-image-loader-1.9.5_0b93e67ce13aee1c52f76f3fb7e2e5745dfb479c/classes.dex" />
     </item>
     <item
         jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/8.4.0/jars/classes.jar"
@@ -93,25 +58,11 @@
         <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-8.4.0_8377050d1f8d4d190658009012577a92bcbbcade/classes.dex" />
     </item>
     <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.2.0_abf98a6ee660535462c616ab30c9eebdecec557f/classes.dex" />
-    </item>
-    <item
         jar="/home/harsh/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
         <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.2.1_37d56afb7c93ff7e8cd0a9df16b2d2ec7c4d3a58/classes.dex" />
-    </item>
-    <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/libs/activation.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/2/activation_7076d1275fcb4aa90083f91021ace4baaa671f79/classes.dex" />
     </item>
     <item
         jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.4.0/jars/classes.jar"
@@ -135,32 +86,11 @@
         <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-8.4.0_ffafaecb09adf841eea2e5a9c5797ac8891ca59c/classes.dex" />
     </item>
     <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/libs/mail.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="428e267abff0d10802ccde86b915da2c20471160">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/2/mail_3e32d0c16e954e86d57c1d32c3b3e48538bc31c8/classes.dex" />
-    </item>
-    <item
         jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/jars/classes.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="86da97c30f50a67ddabe2cf7040713ad17153fce">
         <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.android-facebook-android-sdk-4.11.0_a86dcd4002e6740c2962a89570cffe65d4e092bf/classes.dex" />
-    </item>
-    <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-8.4.0_0206ac724d7ea3f56610d66995af240a0b2bc285/classes.dex" />
-    </item>
-    <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-8.4.0_019eba4a0b54e6ab4838c79213519b416de421b3/classes.dex" />
     </item>
     <item
         jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/8.4.0/jars/classes.jar"
@@ -198,53 +128,11 @@
         <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-customtabs-23.2.1_dc505d4e40da7e8036ec9f52c69f607ece64ca54/classes.dex" />
     </item>
     <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="292a9fa091757208efa65e77eef63088247e51f3">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.2.0_a15864df7fb88d7730bd014aac5a1c90c7965b41/classes.dex" />
-    </item>
-    <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-8.4.0_a29e3e58f2c91024ed91ed0c5af750dd65a77244/classes.dex" />
-    </item>
-    <item
         jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.2.1/jars/classes.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="cb86970df0f0f25f766d320b279c7858c1ca0003">
         <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.2.1_acc796d60d4e2d53da86ed092be9a930c6f1fa49/classes.dex" />
-    </item>
-    <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-8.4.0_da773120c95e1801837de7972a011018caac3e78/classes.dex" />
-    </item>
-    <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/design/23.2.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="1aa5b025efe97f5006f5be16d6ca67c6c3c0c0d8">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.2.0_be8be5e9c19c1a63ad3e7a860769ab3dbd075aa7/classes.dex" />
-    </item>
-    <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-8.4.0_fc08752eba92dd7ad031cb1c4e40bd6b2d38ba9b/classes.dex" />
-    </item>
-    <item
-        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
-        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-8.4.0_d2c8b40f8d099962d44fd22c58afa529a7751567/classes.dex" />
     </item>
     <item
         jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/jars/classes.jar"
@@ -275,6 +163,125 @@
         <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-measurement-8.4.0_4b5cf861af653bb5bfa9fda1db0a59f4677f9847/classes.dex" />
     </item>
     <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-8.4.0_c04a811b5dbb4d90ec7a49a11a0b940bdd633a81/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_8e9b821b04ec76aaa2fb98ecfd31c37f311e1743/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-8.4.0_ba39d3fbea18a233db11bd1e9e72cd16a7186ae7/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="551e78f21acf69ebfb489c0e79647824c838013e">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-8.4.0_a6c00750c29642fbc26726a1f28c0dee8a0a5f3d/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-tasks-1.4.0_5c3d3405698caff7eebcb23b36a7a22300ec5de5/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.2.0_c7c8ab34372c4f1e53757bc0328c48e724821aa3/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.2.0_abf98a6ee660535462c616ab30c9eebdecec557f/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/libs/activation.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/2/activation_7076d1275fcb4aa90083f91021ace4baaa671f79/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/libs/mail.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/2/mail_3e32d0c16e954e86d57c1d32c3b3e48538bc31c8/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-8.4.0_0206ac724d7ea3f56610d66995af240a0b2bc285/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-8.4.0_019eba4a0b54e6ab4838c79213519b416de421b3/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="292a9fa091757208efa65e77eef63088247e51f3">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.2.0_a15864df7fb88d7730bd014aac5a1c90c7965b41/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-8.4.0_a29e3e58f2c91024ed91ed0c5af750dd65a77244/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-8.4.0_da773120c95e1801837de7972a011018caac3e78/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/design/23.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1aa5b025efe97f5006f5be16d6ca67c6c3c0c0d8">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.2.0_be8be5e9c19c1a63ad3e7a860769ab3dbd075aa7/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-8.4.0_fc08752eba92dd7ad031cb1c4e40bd6b2d38ba9b/classes.dex" />
+    </item>
+    <item
+        jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
+        <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-8.4.0_d2c8b40f8d099962d44fd22c58afa529a7751567/classes.dex" />
+    </item>
+    <item
         jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
         jumboMode="true"
         revision="23.0.2"
@@ -299,7 +306,7 @@
         jar="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="79393c323b00476c5ae674b310d9838f6274677a">
+        sha1="01d8f38358aeb61269c84626d6eab79a79b3029b">
         <dex dex="/home/harsh/AndroidStudioProjects/Find_Places_Near_Me/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_ffceb47387e3c972c8f8ad0f79ab87a39f66055d/classes.dex" />
     </item>
     <item

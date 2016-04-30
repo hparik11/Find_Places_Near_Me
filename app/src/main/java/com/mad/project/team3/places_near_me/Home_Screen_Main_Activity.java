@@ -1,6 +1,7 @@
 package com.mad.project.team3.places_near_me;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,23 +11,38 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class Home_Screen_Main_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    EditText uname;
 
     NavigationView navigationView = null;
     Toolbar toolbar = null;
+    protected  UserSession s;
+    public static final int logout_menu = Menu.FIRST+1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_navigation_drawer);
+
+        s=new UserSession(this);
+
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
 
+
+        uname = (EditText) findViewById(R.id.username);
+        if (uname != null) {
+            uname.setText(Login_Page.global_uname);
+        }
         PagerAdapter adapter = new ImageAdapter(this);
         viewPager.setAdapter(adapter);
 
@@ -61,23 +77,28 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.navigation_drawer, menu);
-        return true;
+    public boolean onCreateOptionsMenu(Menu menu){
+        // TODO Auto-generated method stub
+        boolean result = super.onCreateOptionsMenu(menu);
+        menu.add(0, logout_menu, 0,  "Logout");
+        return result;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item){
+        // TODO Auto-generated method stub
+        switch (item.getItemId()) {
+            case logout_menu:
+                if(s != null) {
+                    s.deleteSession();
+                    // super.onDestroy();
+                    finish();
+                    Intent logout = new Intent(Home_Screen_Main_Activity.this, Login_Page.class);
+                    logout.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(logout);
+                }
 
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+                break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -91,11 +112,7 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
 
-//            intent.putExtra("Category", "");
-//            startActivity(intent);
-//            setResult(1, intent);
 
-            startActivity(intent);
 
         } else if (id == R.id.nav_hotel) {
 
@@ -134,6 +151,8 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
 
         }
         else if (id == R.id.nav_share) {
+            new MyTask().execute();
+
 
         } else if (id == R.id.nav_manage) {
             Intent i = new Intent(Home_Screen_Main_Activity.this, Change_Pasword_User.class);
@@ -141,9 +160,42 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
             setResult(1, i);
 
         }
+        else if (id == R.id.nav_logout){
+
+            if(s != null) {
+                s.deleteSession();
+                // super.onDestroy();
+                finish();
+                Intent logout = new Intent(Home_Screen_Main_Activity.this, Login_Page.class);
+                logout.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(logout);
+                return true;
+            }
+
+
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    private class MyTask extends AsyncTask<Void,Void,Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                GMailSender sender = new GMailSender("myapp123zzz@gmail.com", "googleapp");
+                sender.sendMail("Register Email",
+                        "Hello User",
+                        "myapp123zzz@gmail.com",Signup_Activity.email
+                );
+
+            } catch (Exception e) {
+                Log.e("SendMail", e.getMessage(), e);
+            }
+            return null;
+        }
+
     }
 }

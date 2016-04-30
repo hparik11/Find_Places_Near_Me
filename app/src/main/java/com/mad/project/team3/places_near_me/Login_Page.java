@@ -22,21 +22,27 @@ public class Login_Page extends AppCompatActivity {
     SqliteController controller = new SqliteController(this);
     public static String global_uname;
     public static String global_pwd;
+    protected UserSession s;
    // Button signin;
     //Button changepwd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login__page);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        s=new UserSession(this);
+    if((s.getSession()!="")&& (s.getSessionPWD()!=""))
+        {
+            Intent i = new Intent(Login_Page.this, Home_Screen_Main_Activity.class);
+            startActivity(i);
+        }
+       Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         uflag=(TextView)findViewById(R.id.button7);
         uflag.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
 
 
     }
-
-    public void changepwd(View view)
+        public void changepwd(View view)
     {
         Intent i = new Intent(Login_Page.this, Changepassword_screen.class);
         startActivity(i);
@@ -45,6 +51,7 @@ public class Login_Page extends AppCompatActivity {
     public void map_module(View view){
 
         // this gets called after signin button is pressed.
+
         uname=(EditText)findViewById(R.id.editText12);
         pwd=(EditText)findViewById(R.id.editText13);
         String username  = uname.getText().toString();
@@ -62,6 +69,8 @@ public class Login_Page extends AppCompatActivity {
         }
         else if (username.equals("admin") && password.equals("admin"))
         {
+            s.setSession(username);
+            s.setSessionPWD(password);
             Intent i = new Intent(Login_Page.this, Admin_Console.class);
             startActivity(i);
             // intent to admin console
@@ -69,6 +78,8 @@ public class Login_Page extends AppCompatActivity {
 
         else if (username.equals("admin") && password.equals("admin1"))
         {
+            s.setSession(username);
+            s.setSessionPWD(password);
             Intent i = new Intent(Login_Page.this, Home_Screen_Main_Activity.class);
             startActivity(i);
             // intent to admin console
@@ -87,6 +98,8 @@ public class Login_Page extends AppCompatActivity {
 
                  global_pwd=password;
                          global_uname=username;
+                 s.setSession(username);
+                 s.setSessionPWD(password);
                  Toast.makeText(this, "User Validated", Toast.LENGTH_LONG).show();
 
                  Intent i = new Intent(Login_Page.this, Home_Screen_Main_Activity.class);

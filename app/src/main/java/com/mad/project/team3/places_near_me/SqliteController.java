@@ -166,6 +166,8 @@ public class SqliteController extends SQLiteOpenHelper {
     }
 
 
+
+
     public void cleardb() {
         SQLiteDatabase database = this.getWritableDatabase();
         String query = "delete from user_details";

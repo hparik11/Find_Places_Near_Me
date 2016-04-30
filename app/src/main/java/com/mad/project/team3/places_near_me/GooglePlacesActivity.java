@@ -374,33 +374,7 @@ public class GooglePlacesActivity extends FragmentActivity implements OnMapReady
                         .snippet(result.get(i).getVicinity()));
                 LatLng tempLoc = new LatLng(result.get(i).getLatitude(), result.get(i).getLongitude());
 
-                //Log.d("Position "+String.valueOf(i), result.get(i).getName());
 
-                /*md = new GMapV2Direction(cll, tempLoc, GMapV2Direction.MODE_WALKING);
-                md.execute();
-                Document doc = null;
-                // Document doc = md.getDocument(cll, zll,
-                // GMapV2Direction.MODE_DRIVING);
-                try {
-                    // get the result from the asynctask returned by Google,
-                    // wait if necessary
-                    doc = md.get();
-
-                    // now process/parse the results from Google
-                    ArrayList<LatLng> directionPoint = md.getDirection(doc);
-
-                    // here, draw the lines based on the direction points
-                    PolylineOptions rectLine = new PolylineOptions().width(8)
-                            .color(Color.BLUE);
-
-                    for (int j = 0; j < directionPoint.size(); j++) {
-                        rectLine.add(directionPoint.get(j));
-                    }
-                    Polyline polylin = mMap.addPolyline(rectLine);
-
-                } catch (Exception e) {
-
-                }*/
             }
 
         }

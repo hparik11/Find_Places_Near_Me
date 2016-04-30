@@ -19,23 +19,23 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:src="@drawable/prof" />
 
-    <TextView
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Android Studio"
+        android:text="Harsh Parikh"
         android:textStyle="bold"
         android:textSize="25dp"
         android:textColor="@android:color/holo_orange_light"
-         />
+        android:id="@+id/username" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:textStyle="italic|bold"
-        android:text="android.studio@android.com"
+        android:text="hparik11@hawk.iit.edu"
         android:textColor="@android:color/holo_orange_light"/>
 
 </LinearLayout>
