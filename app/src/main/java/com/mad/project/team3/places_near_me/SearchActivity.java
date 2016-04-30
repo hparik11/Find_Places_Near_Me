@@ -1,6 +1,7 @@
 package com.mad.project.team3.places_near_me;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ScaleDrawable;
@@ -12,6 +13,10 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 import java.util.ArrayList;
 
@@ -78,10 +83,22 @@ public class SearchActivity extends Activity {
         adapter = new PlaceArrayAdapter(getApplicationContext(), list);
         myListView.setAdapter(adapter);
 
-
-        //Log.d("TTTTTTTT", "TTTTTT");
+        initImageLoader(getApplicationContext());
     }
 
+    public static void initImageLoader(Context context) {
+        // This configuration tuning is custom. You can tune every option, you may tune some of them,
+        // or you can create default configuration by ImageLoaderConfiguration.createDefault(this); method.
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
+                .threadPriority(Thread.NORM_PRIORITY - 2)//加载图片的线程数
+                .denyCacheImageMultipleSizesInMemory() //解码图像的大尺寸将在内存中缓存先前解码图像的小尺寸。
+                .discCacheFileNameGenerator(new Md5FileNameGenerator())//设置磁盘缓存文件名称
+                .tasksProcessingOrder(QueueProcessingType.LIFO)//设置加载显示图片队列进程
+                .writeDebugLogs() // Remove for release app
+                .build();
+        // Initialize ImageLoader with configuration.
+        ImageLoader.getInstance().init(config);
+    }
     private class ShowAddresses extends AsyncTask<ArrayAdapter<String>, ArrayAdapter<String>, ArrayAdapter<String> > {
 
         @Override
