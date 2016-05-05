@@ -136,7 +136,6 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
             setResult(1, intent);
 
         } else if (id == R.id.nav_library) {
-
             intent.putExtra("Category", "Library");
             startActivity(intent);
             setResult(1, intent);
@@ -147,6 +146,7 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
             intent.putExtra("Category", "");
             startActivity(intent);
             setResult(1, intent);
+
 
 
         }
@@ -188,7 +188,7 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
                 GMailSender sender = new GMailSender("myapp123zzz@gmail.com", "googleapp");
                 sender.sendMail("Register Email",
                         "Hello User",
-                        "myapp123zzz@gmail.com",Signup_Activity.email
+                        "myapp123zzz@gmail.com","hparik11@hawk.iit.edu"
                 );
 
             } catch (Exception e) {

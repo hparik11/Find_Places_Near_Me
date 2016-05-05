@@ -122,8 +122,10 @@ public class Admin_Console extends AppCompatActivity {
 
 
     public void adminlogout(View view)
-{
-    Intent i = new Intent(Admin_Console.this, Login_Page.class);
+{finish();
+
+    Intent i = new Intent(Admin_Console.this, Entry_Activity.class);
+    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
     startActivity(i);
 }
     public void editfunction(){

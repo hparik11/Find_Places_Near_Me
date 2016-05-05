@@ -1,5 +1,6 @@
 package com.mad.project.team3.places_near_me;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -107,16 +109,25 @@ public class Entry_Activity extends AppCompatActivity {
     }
     public void fblogin_with_rotate(View v)
     {
-        img_fblogin=(LoginButton)findViewById(R.id.imageButton2);
-        Animation startRotateAnimation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
-        img_fblogin.startAnimation(startRotateAnimation);
-        LoginButton loginButton=(LoginButton)v.findViewById(R.id.imageButton2);
+        if(CheckNetwork.isInternetAvailable(Entry_Activity.this)) //returns true if internet available
+        {
+            img_fblogin=(LoginButton)findViewById(R.id.imageButton2);
+            Animation startRotateAnimation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
+            img_fblogin.startAnimation(startRotateAnimation);
+            LoginButton loginButton=(LoginButton)v.findViewById(R.id.imageButton2);
 
-        // loginButton.setReadPermissions("user_friends");
-        loginButton.setReadPermissions(Arrays.asList(
-                "public_profile", "email", "user_birthday", "user_friends"));
-        // loginButton.setFragment();
-        loginButton.registerCallback(mCallbackManager, mCallback);
+            // loginButton.setReadPermissions("user_friends");
+            loginButton.setReadPermissions(Arrays.asList(
+                    "public_profile", "email", "user_birthday", "user_friends"));
+            // loginButton.setFragment();
+            loginButton.registerCallback(mCallbackManager, mCallback);
+            //do something. loadwebview.
+        }
+        else
+        {
+            Toast.makeText(Entry_Activity.this,"No Internet Connection",Toast.LENGTH_LONG).show();
+        }
+
     }
 
     @Override

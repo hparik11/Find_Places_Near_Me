@@ -69,21 +69,13 @@ public class Login_Page extends AppCompatActivity {
         }
         else if (username.equals("admin") && password.equals("admin"))
         {
-            s.setSession(username);
-            s.setSessionPWD(password);
+
             Intent i = new Intent(Login_Page.this, Admin_Console.class);
             startActivity(i);
             // intent to admin console
         }
 
-        else if (username.equals("admin") && password.equals("admin1"))
-        {
-            s.setSession(username);
-            s.setSessionPWD(password);
-            Intent i = new Intent(Login_Page.this, Home_Screen_Main_Activity.class);
-            startActivity(i);
-            // intent to admin console
-        }
+
 
 
 
