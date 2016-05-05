@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Find_Places_Near_Me</string>
+    <string name="app_name">Places Near Me</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="action_settings">Settings</string>

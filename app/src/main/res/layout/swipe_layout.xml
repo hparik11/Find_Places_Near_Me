@@ -2,94 +2,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginbackground">
+    android:weightSum="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtView"
-        android:text="Famous Places Nearby"
-        android:layout_gravity="center_horizontal"
-        android:ellipsize="marquee"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:freezesText="true"
-        android:gravity="center_horizontal"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:paddingLeft="5dip"
-        android:paddingRight="5dip"
-        android:scrollHorizontally="true"
-        android:shadowColor="#FF0000"
-        android:shadowDx="1.5"
-        android:shadowDy="1.3"
-        android:shadowRadius="1.6"
-        android:layout_marginTop="50dp"
-        android:singleLine="true"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        />
+
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_weight="0.14">
 
      <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="match_parent"
-         android:orientation="vertical">
+         android:orientation="vertical"
+         android:weightSum="1">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:id="@+id/restName"
         android:layout_marginTop="10dp"
-        android:textColor="@android:color/holo_red_light"
+        android:textColor="@android:color/black"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal" />
 
     <ImageView
-        android:layout_width="300dp"
+        android:layout_width="371dp"
         android:layout_height="200dp"
         android:id="@+id/rest_view"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        />
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:textSize="20sp"
-        android:id="@+id/gas_Name"
-        android:textColor="@android:color/holo_red_light"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal" />
-
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:id="@+id/gas_view"
-        android:layout_gravity="center_horizontal" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:id="@+id/atm_Name"
-        android:textColor="@android:color/holo_red_light"
-        android:layout_gravity="center_horizontal" />
-
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:id="@+id/atm_view"
-        android:layout_gravity="center_horizontal" />
 
      </LinearLayout>
     </ScrollView>
 
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_weight="1"
+        android:layout_marginTop="10dp">
+        <TextView android:id="@+id/txtDesc" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textStyle="normal"
+            android:textSize="15sp"
+            android:textColor="@color/com_facebook_share_button_text_color">
+
+        </TextView>
+    </ScrollView>
 </LinearLayout>

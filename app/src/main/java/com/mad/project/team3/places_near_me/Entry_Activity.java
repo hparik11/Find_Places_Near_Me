@@ -136,6 +136,7 @@ public class Entry_Activity extends AppCompatActivity {
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
 
     }
+
     @Override
     public void onResume() {
         super.onResume();

@@ -21,16 +21,9 @@
             android:layout_height="45dp"
             android:id="@+id/TFaddress"
             />
-       <!-- <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Search"
 
-            android:layout_gravity="right"
-             />-->
         <ImageButton
-            style="?android:attr/buttonStyleSmall"
+
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:id="@+id/Bsearch"
@@ -39,13 +32,14 @@
 
 
         <ImageButton
-            style="?android:attr/buttonStyleSmall"
+
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:id="@+id/Btype"
             android:onClick="changeType"
             android:src="@drawable/street_view"
-            android:layout_marginStart="5dp"/>
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp" />
 
     </LinearLayout>
 
@@ -54,7 +48,7 @@
         android:layout_height="wrap_content">
 
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools" android:layout_width="360dp"
+            xmlns:tools="http://schemas.android.com/tools" android:layout_width="372dp"
             android:layout_height="547dp" android:id="@+id/map" tools:context=".GooglePlacesActivity"
             android:name="com.google.android.gms.maps.SupportMapFragment" />
         <LinearLayout

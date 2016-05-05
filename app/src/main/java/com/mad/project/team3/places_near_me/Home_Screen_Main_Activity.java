@@ -38,6 +38,8 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
 
+        TextView tv = (TextView) findViewById(R.id.txtView);
+        tv.setSelected(true);
 
         uname = (EditText) findViewById(R.id.username);
         if (uname != null) {

@@ -20,7 +20,11 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+
+
+
     </android.support.design.widget.AppBarLayout>
+
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -31,12 +35,40 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/main_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal|top">
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/view_pager"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"/>
+                android:layout_height="450dp"
+                android:layout_width="400dp"
+                android:layout_marginTop="31dp"
+                android:layout_below="@+id/txtView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:text="Top 10 Points of Interest Nearby"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_red_light"
+                android:id="@+id/txtView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:freezesText="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="73dp" />
+
 
         </RelativeLayout>
 
