@@ -48,6 +48,13 @@ public class Login_Page extends AppCompatActivity {
         startActivity(i);
     }
 
+
+    public void new_user(View view){
+        Intent i = new Intent(Login_Page.this, Signup_Activity.class);
+        startActivity(i);
+    }
+
+
     public void map_module(View view){
 
         // this gets called after signin button is pressed.
@@ -74,9 +81,6 @@ public class Login_Page extends AppCompatActivity {
             startActivity(i);
             // intent to admin console
         }
-
-
-
 
 
         else {

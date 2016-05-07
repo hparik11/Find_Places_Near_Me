@@ -6,12 +6,21 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Signup_Activity extends AppCompatActivity {
     long dbstatus;
     boolean stat_fname=true;
@@ -23,6 +32,7 @@ public class Signup_Activity extends AppCompatActivity {
     boolean stat_password=false;
     boolean stat_email=false;
     String User_Creation_Email_MSg="Welcome,\n\nThank You for registering to the app.\n\nRegards,\nTeam3\nMAD";
+
     String fname;
     String lname;
     String dob;
@@ -31,112 +41,242 @@ public class Signup_Activity extends AppCompatActivity {
     String username;
     String password;
     public static String email;
-    EditText e_fname, e_lname, e_dob, e_country, e_email, e_username, e_password;
+    EditText e_fname, e_lname, e_dob, e_email, e_username, e_password;
     RadioGroup radio_g;
     RadioButton radio_b;
     SqliteController controller = new SqliteController(this);
+    public  String array_spinner[];
+    public Spinner e_country;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        e_country = (Spinner) findViewById(R.id.editText4);
+        ArrayAdapter<String> adapter;
+        List<String> list;
+
+        list = new ArrayList<String>();
+        list.add("Select Country");
+        list.add("India");
+        list.add("China");
+        list.add("United States");
+        list.add("England");
+        list.add("Pakistan");
+        list.add("Germany");
+        list.add("France");
+        list.add("Denmark");
+        list.add("Canada");
+
+
+        adapter = new ArrayAdapter<String>(getApplicationContext(),
+                android.R.layout.simple_spinner_item, list);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        e_country.setAdapter(adapter);
+        e_email = (EditText) findViewById(R.id.editText7);
+        e_email.setOnTouchListener(new View.OnTouchListener() {
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+
+        if(MotionEvent.ACTION_UP == event.getAction())
+        {
+            e_email.setError("\nEmail Format : User@domain.com\n");
+        }
+        return false;
     }
+});
+        e_dob = (EditText) findViewById(R.id.editText3);
+        e_dob.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (MotionEvent.ACTION_UP == event.getAction()) {
+                    e_dob.setError("\nDOB Format : mm/dd/yyyy\n");
+                }
+                return false;
+            }
+        });
+
+        e_username = (EditText) findViewById(R.id.editText5);
+        e_username.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (MotionEvent.ACTION_UP == event.getAction())
+                {
+                    e_username.setError("\nUserName Must be between 3 to 15 characters\n");
+                }
+                return false;
+            }
+        });
+
+        //String text ="\nUserName Must be between 3 to 15 characters\n";
+
+
+        e_password = (EditText) findViewById(R.id.editText6);
+        e_password.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (MotionEvent.ACTION_UP == event.getAction())
+                {String text ="\nPassword Must be between 3 to 15 characters\nIt must have atleast one lowercase letter\n" +
+                        "It must have one Uppercase letter\nIt must have one special charactes from @#$%!\n ";
+                    e_password.setError(text);
+                }
+                return false;
+            }
+        });
+
+
+
+    }
+
+
+    public void already_logged_in(View view){
+        Intent i = new Intent(Signup_Activity.this, Login_Page.class);
+        startActivity(i);
+    }
+
     public void add_user(View view) {
-        try {
-            e_fname = (EditText) findViewById(R.id.editText);
-            fname = e_fname.getText().toString();
-            //Toast.makeText(Signup_Activity.this, "fname="+fname, Toast.LENGTH_LONG).show();
-            e_lname = (EditText) findViewById(R.id.editText2);
-            lname = e_lname.getText().toString();
-            // Toast.makeText(Signup_Activity.this, "lname="+lname, Toast.LENGTH_LONG).show();
-            e_dob = (EditText) findViewById(R.id.editText3);
-            dob = e_dob.getText().toString();
-            // Toast.makeText(Signup_Activity.this, "dob="+dob, Toast.LENGTH_LONG).show();
-            e_country = (EditText) findViewById(R.id.editText4);
-            country = e_country.getText().toString();
-            // Toast.makeText(Signup_Activity.this, "country="+country, Toast.LENGTH_LONG).show();
-            e_email = (EditText) findViewById(R.id.editText7);
-            email = e_email.getText().toString().trim();
-            String emailPattern = "^\\S+@\\S+$";
-            String pat_dob="^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$";
-            String pat_username= "^[a-z0-9_-]{3,15}$";
-            String pat_password="^((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})";
-            // Toast.makeText(Signup_Activity.this, "email="+email, Toast.LENGTH_LONG).show();
-            e_username = (EditText) findViewById(R.id.editText5);
-            username = e_username.getText().toString();
-            //Toast.makeText(Signup_Activity.this, "username="+username, Toast.LENGTH_LONG).show();
-            e_password = (EditText) findViewById(R.id.editText6);
-            password = e_password.getText().toString();
-            // Toast.makeText(Signup_Activity.this, "password="+password, Toast.LENGTH_LONG).show();
-            radio_g = (RadioGroup) findViewById(R.id.radioGroup2);
-            int selected_id = radio_g.getCheckedRadioButtonId();
-            radio_b = (RadioButton) findViewById(selected_id);
-            Sex = radio_b.getText().toString();
-            //Toast.makeText(Signup_Activity.this, "sex="+Sex, Toast.LENGTH_LONG).show();
+
+try {
+
+
+
+    e_fname = (EditText) findViewById(R.id.editText);
+    fname = e_fname.getText().toString();
+    //Toast.makeText(Signup_Activity.this, "fname="+fname, Toast.LENGTH_LONG).show();
+    e_lname = (EditText) findViewById(R.id.editText2);
+    lname = e_lname.getText().toString();
+
+
+
+
+    // Toast.makeText(Signup_Activity.this, "lname="+lname, Toast.LENGTH_LONG).show();
+
+
+
+
+
+    dob = e_dob.getText().toString();
+    // Toast.makeText(Signup_Activity.this, "dob="+dob, Toast.LENGTH_LONG).show();
+   // e_country = (EditText) findViewById(R.id.editText4);
+    country = e_country.getSelectedItem().toString();
+    // Toast.makeText(Signup_Activity.this, "country="+country, Toast.LENGTH_LONG).show();
+
+    email = e_email.getText().toString().trim();
+    String emailPattern = "^\\S+@\\S+$";
+    String pat_dob="^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$";
+    String pat_username= "^[a-z0-9_-]{3,15}$";
+    String pat_password="^((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%!]).{6,20})";
+
+    // Toast.makeText(Signup_Activity.this, "email="+email, Toast.LENGTH_LONG).show();
+
+    username = e_username.getText().toString();
+
+    //Toast.makeText(Signup_Activity.this, "username="+username, Toast.LENGTH_LONG).show();
+
+    password = e_password.getText().toString();
+    // Toast.makeText(Signup_Activity.this, "password="+password, Toast.LENGTH_LONG).show();
+    radio_g = (RadioGroup) findViewById(R.id.radioGroup2);
+    int selected_id = radio_g.getCheckedRadioButtonId();
+    radio_b = (RadioButton) findViewById(selected_id);
+    Sex = radio_b.getText().toString();
+    //Toast.makeText(Signup_Activity.this, "sex="+Sex, Toast.LENGTH_LONG).show();
+
+
 // fname validation
-            if (null == fname || fname.length() == 0)
-            {
-                stat_fname=false;
-                Toast.makeText(this, "Please Enter fname Properly", Toast.LENGTH_LONG).show();
-            }
-            //lname validation
-            if (null == lname || lname.length() == 0)
-            {
-                stat_lname=false;
-                Toast.makeText(this, "Please Enter lname Properly", Toast.LENGTH_LONG).show();
-            }
-            // dob validation
-            if (dob.matches(pat_dob))
-            {
-                stat_dob=true;
-            }
-            String dob_Suggestion="Invalid date of birth:Correct Format MM/DD/YYYY";
-            if (stat_dob==false)
-            {
-                Toast.makeText(this, dob_Suggestion, Toast.LENGTH_LONG).show();
-            }
+
+    if (null == fname || fname.length() == 0)
+    {
+        stat_fname=false;
+        Toast.makeText(this, "Please Enter fname Properly", Toast.LENGTH_LONG).show();
+
+    }
+
+    //lname validation
+     if (null == lname || lname.length() == 0)
+    {
+        stat_lname=false;
+        Toast.makeText(this, "Please Enter lname Properly", Toast.LENGTH_LONG).show();
+
+    }
+
+
+    // dob validation
+
+
+    if (dob.matches(pat_dob))
+    {
+        stat_dob=true;
+    }
+
+    if (stat_dob==false)
+    {
+
+
+
+        Toast.makeText(this, "Please Enter dob Properly", Toast.LENGTH_LONG).show();
+
+
+    }
+
+
 // country validation
-            if (null == country || country.length() == 0)
-            { stat_country=false;
-                Toast.makeText(this, "Please Enter country Properly", Toast.LENGTH_LONG).show();
-            }
-            //email validation
-            if (email.matches(emailPattern))
-            {
-                stat_email=true;
-                //Toast.makeText(getApplicationContext(),"valid email address",Toast.LENGTH_SHORT).show();
-            }
-            String Email_Suggestion="Invalid email address\nCorrect Format Username@domain.com";
-            if (stat_email==false)
-            {
-                Toast.makeText(getApplicationContext(),Email_Suggestion,Toast.LENGTH_SHORT).show();
-            }
+
+    if (null == country || country.length() == 0||country.equals("Select Country"))
+    { stat_country=false;
+        Toast.makeText(this, "Please Enter country Properly", Toast.LENGTH_LONG).show();
+
+    }
+
+    //email validation
+
+
+     if (email.matches(emailPattern))
+    {
+        stat_email=true;
+        //Toast.makeText(getApplicationContext(),"valid email address",Toast.LENGTH_SHORT).show();
+    }
+
+    if (stat_email==false)
+    {
+        Toast.makeText(getApplicationContext(),"Invalid email address",Toast.LENGTH_SHORT).show();
+    }
+
+
 // sex validation
-            if (null == Sex || Sex.length() == 0) {
-                stat_sex=false;
-                Toast.makeText(this, "Please Select a sex ", Toast.LENGTH_LONG).show();
-            }
-            String UserNameSuggestion="Invalid UserName Format\nA username should be between 3 and 15 characters long\nIt may contain characters, numbers and the ., -, _ symbols";
-            // username validation
-            // A username should be between 2 and 25 characters long.
-            //It may contain characters, numbers and the ., -, _ symbols.
-            if (username.matches(pat_username))
-            {
-                stat_username=true;
-            }
-            if (stat_username==false)
-            {
-                Toast.makeText(getApplicationContext(), UserNameSuggestion, Toast.LENGTH_LONG).show();
-            }
-            String test_username=controller.check_existing_username(username);
-            if (test_username==null)
-            {
-                Toast.makeText(this, "Username already picked:Pick new username", Toast.LENGTH_LONG).show();
-                stat_username=false;
-            }
-            String pass_suggestion="Password Invalid Format\nA digit must occur at least once\na lower case,uppercase,Special Character letter must occur at least once\nminimum 6 characters and maximum 20 Characters";
-            //password validation Rules
+    if (null == Sex || Sex.length() == 0) {
+        stat_sex=false;
+        Toast.makeText(this, "Please Select a sex ", Toast.LENGTH_LONG).show();
+    }
+
+        // username validation
+        // A username should be between 2 and 25 characters long.
+                //It may contain characters, numbers and the ., -, _ symbols.
+    if (username.matches(pat_username))
+    {
+        stat_username=true;
+    }
+    if (stat_username==false)
+    {
+        Toast.makeText(getApplicationContext(), "Please Enter username Properly", Toast.LENGTH_LONG).show();
+
+    }
+    String test_username=controller.check_existing_username(username);
+    if (test_username==null)
+    {
+        Toast.makeText(this, "Username already picked:Pick new username", Toast.LENGTH_LONG).show();
+        stat_username=false;
+
+    }
+
+
+
+    //password validation Rules
 /*
 ^                 # start-of-string
 (?=.*[0-9])       # a digit must occur at least once
@@ -147,49 +287,66 @@ public class Signup_Activity extends AppCompatActivity {
 .{4,}             # anything, at least six places though
 $                 # end-of-string
 */
-            if (password.matches(pat_password))
-            {
-                stat_password=true;
-            }
-            if (stat_password==false){
-                Toast.makeText(getApplicationContext(), pass_suggestion, Toast.LENGTH_LONG).show();
-            }
-            //Final Validation
-            if (stat_fname==true&&stat_lname==true&&stat_dob==true&&stat_country==true&&stat_sex==true&&stat_username==true&&stat_password==true&&stat_email==true) {
-                dbstatus=controller.insertuser(fname, lname, dob, country, Sex, email, username, password);
-                if  (dbstatus==-1)
-                {
-                    Toast.makeText(Signup_Activity.this, "User already Exists", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Toast.makeText(this, "User Registered Successfully", Toast.LENGTH_LONG).show();
-                    new MyTask().execute();
-                    Intent i = new Intent(Signup_Activity.this, Signup_Success.class);
-                    startActivity(i);
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            Toast.makeText(this, "Please select Sex", Toast.LENGTH_LONG).show();
-        }
+    if (password.matches(pat_password))
+    {
+        stat_password=true;
     }
+    if (stat_password==false){
+
+        Toast.makeText(getApplicationContext(), "Please Enter password Properly", Toast.LENGTH_LONG).show();
+
+    }
+
+    //Final Validation
+
+if (stat_fname==true&&stat_lname==true&&stat_dob==true&&stat_country==true&&stat_sex==true&&stat_username==true&&stat_password==true&&stat_email==true) {
+     dbstatus=controller.insertuser(fname, lname, dob, country, Sex, email, username, password);
+
+    if  (dbstatus==-1)
+    {
+        Toast.makeText(Signup_Activity.this, "User already Exists", Toast.LENGTH_SHORT).show();
+    }
+    else {
+        Toast.makeText(this, "User Registered Successfully", Toast.LENGTH_LONG).show();
+        new MyTask().execute();
+        Intent i = new Intent(Signup_Activity.this, Signup_Success.class);
+        startActivity(i);
+    }
+
+
+}
+
+}
+catch (Exception e)
+{
+    Toast.makeText(this, "Please select Sex", Toast.LENGTH_LONG).show();
+}
+
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
+
+
+
     public void login(View view)
     {
-        Intent i = new Intent(Signup_Activity.this, Login_Page.class);
+       Intent i = new Intent(Signup_Activity.this, Login_Page.class);
         startActivity(i);
+
+
     }
     private class MyTask extends AsyncTask<Void,Void,Void> {
         @Override
@@ -199,11 +356,13 @@ $                 # end-of-string
                 sender.sendMail("Register Email",
                         User_Creation_Email_MSg,
                         "myapp123zzz@gmail.com",email
-                );
+                        );
+
             } catch (Exception e) {
                 Log.e("SendMail", e.getMessage(), e);
             }
             return null;
         }
+
     }
 }

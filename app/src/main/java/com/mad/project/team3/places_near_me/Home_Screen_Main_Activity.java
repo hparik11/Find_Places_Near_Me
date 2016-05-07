@@ -190,7 +190,7 @@ public class Home_Screen_Main_Activity extends AppCompatActivity
                 GMailSender sender = new GMailSender("myapp123zzz@gmail.com", "googleapp");
                 sender.sendMail("Register Email",
                         "Hello User",
-                        "myapp123zzz@gmail.com","hparik11@hawk.iit.edu"
+                        "myapp123zzz@gmail.com",Signup_Activity.email
                 );
 
             } catch (Exception e) {

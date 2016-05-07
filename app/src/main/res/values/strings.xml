@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">Places Near Me</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_maps">Map Activity</string>
+    <string name="title_activity_main">Main Activity</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_admin__console">Admin Console</string>
-    <string name="title_activity_changepassword_screen">Changepassword creen</string>
-    <string name="title_activity_fbloginpage">Fbloginpage</string>
-    <string name="title_activity_login__page">Login_Page</string>
-    <string name="title_activity_passwordupdated">Passwordupdated</string>
-    <string name="title_activity_signup_success">signup_success</string>
+    <string name="title_activity_changepassword_screen">Change Password Screen</string>
+    <string name="title_activity_fbloginpage">Facebook Login Page</string>
+    <string name="title_activity_login__page">Login Page</string>
+    <string name="title_activity_passwordupdated">Password Updated</string>
+    <string name="title_activity_signup_success">Successfully Signed up</string>
     <string name="app_id">196763187364664</string>
     <string name="title_activity_app__start">App_Start</string>
     <string name="title_activity_user_details__admin">User_details_Admin</string>
@@ -32,7 +32,7 @@
         <item>Cafe</item>
         <item>Fire-Station</item>
         <item>Hospital</item>
-        <item>Pharmacy</item>
+        <item>Pharmacy</item>sign
         <item>Police</item>
         <item>Restaurant</item>
         <item>Shopping Mall</item>

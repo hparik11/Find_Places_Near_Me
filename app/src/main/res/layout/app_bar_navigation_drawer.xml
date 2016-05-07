@@ -48,7 +48,7 @@
                 android:layout_alignParentStart="true" />
 
             <TextView
-                android:text="Top 10 Points of Interest Nearby"
+                android:text="Top 10 Points of Interest Around Me"
                 android:textSize="30dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/holo_red_light"

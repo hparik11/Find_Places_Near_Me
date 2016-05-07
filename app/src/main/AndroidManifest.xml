@@ -35,7 +35,7 @@
              Note that the API key is linked to the encryption key used to sign the APK.
              You need a different API key for each encryption key, including the release key that is used to
              sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -68,7 +68,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Signup_Activity"
-            android:label="Sign-up"
+            android:label="Sign up"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Changepassword_screen"
@@ -140,11 +140,16 @@
             android:name=".Details_Place"
             android:label="@string/title_activity_details__place"
             android:theme="@style/AppTheme.NoActionBar"/>
-	<activity
+
+	    <activity
             android:name=".User_details_Admin"
             android:label="@string/title_activity_user_details__admin"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Change_Pasword_User"></activity>
+
+        <activity android:name=".Change_Pasword_User"
+            android:label="Change Password">
+
+        </activity>
     </application>
 
 </manifest>

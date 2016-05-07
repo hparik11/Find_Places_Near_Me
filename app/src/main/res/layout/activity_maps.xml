@@ -1,5 +1,5 @@
 <LinearLayout
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical">
@@ -7,20 +7,21 @@
 <com.google.android.gms.maps.MapView
     android:id="@+id/mapView"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="wrap_content">
 
 </com.google.android.gms.maps.MapView>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:weightSum="1">
 
 
         <EditText
-            android:layout_width="266dp"
+            android:layout_width="320dp"
             android:layout_height="45dp"
             android:id="@+id/TFaddress"
-            />
+            android:layout_weight="1" />
 
         <ImageButton
 
@@ -48,8 +49,8 @@
         android:layout_height="wrap_content">
 
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools" android:layout_width="372dp"
-            android:layout_height="547dp" android:id="@+id/map" tools:context=".GooglePlacesActivity"
+            xmlns:tools="http://schemas.android.com/tools" android:layout_width="420dp"
+            android:layout_height="620dp" android:id="@+id/map" tools:context=".GooglePlacesActivity"
             android:name="com.google.android.gms.maps.SupportMapFragment" />
         <LinearLayout
             android:layout_width="wrap_content"

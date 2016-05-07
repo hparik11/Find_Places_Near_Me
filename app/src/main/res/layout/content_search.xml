@@ -7,7 +7,7 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <EditText
-        android:layout_width="305dp"
+        android:layout_width="350dp"
         android:layout_height="45dp"
         android:id="@+id/tAddress"
         android:inputType="text"

@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/loginbackground"
-    tools:context="com.mad.project.team3.places_near_me.Change_Pasword_User">
+    >
 
     <EditText
         android:layout_width="wrap_content"

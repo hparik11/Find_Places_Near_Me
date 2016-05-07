@@ -25,7 +25,7 @@
         android:layout_marginTop="47dp" />
 
     <Button
-        android:layout_width="250px"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Button"
         android:textColor="#FFFFFF"
@@ -45,12 +45,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView2"
-        android:layout_above="@+id/recycler_view"
-        android:layout_toLeftOf="@+id/button5"
-        android:layout_toStartOf="@+id/button5"
         android:clickable="true"
         android:onClick="back"
-        android:layout_marginRight="60dp"
-        android:layout_marginEnd="60dp" />
+        android:layout_above="@+id/recycler_view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

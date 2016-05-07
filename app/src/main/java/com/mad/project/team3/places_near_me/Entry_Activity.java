@@ -1,7 +1,9 @@
 package com.mad.project.team3.places_near_me;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -62,6 +64,7 @@ public class Entry_Activity extends AppCompatActivity {
     };
 
 
+    @TargetApi(Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +76,7 @@ public class Entry_Activity extends AppCompatActivity {
         LoginButton loginButton=(LoginButton)findViewById(R.id.imageButton2);
         loginButton.setBackgroundResource(R.drawable.fblogin);
         loginButton.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
+
         // loginButton.setCompoundDrawablePadding(0);
         //loginButton.setPadding(0, 0, 0, 0);
         loginButton.setText("");

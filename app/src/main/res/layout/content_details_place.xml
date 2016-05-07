@@ -19,6 +19,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Name"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textColor="@android:color/holo_green_dark"
         android:id="@+id/txtName"
         android:layout_gravity="center_horizontal" />
 
@@ -26,18 +29,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Distance"
+            android:textStyle="bold"
             android:id="@+id/textView2" />
 
         <EditText
             android:layout_width="166dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:id="@+id/txtDist" />
 
     </LinearLayout>
@@ -45,18 +51,22 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Address"
+            android:textStyle="bold"
             android:id="@+id/textView3" />
 
         <EditText
             android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:id="@+id/txtAddress" />
 
     </LinearLayout>
@@ -64,6 +74,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:padding="10dp">
 
         <TextView
@@ -71,6 +82,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Contact"
+            android:textStyle="bold"
             android:id="@+id/textView4" />
 
         <TextView
@@ -79,26 +91,30 @@
             android:id="@+id/txtCont"
             android:autoLink="phone"
             android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
             android:textSize="20dp"/>
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:weightSum="1">
+        android:layout_marginTop="10dp"
+        android:weightSum="1"
+        android:padding="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Website"
+            android:textStyle="bold"
             android:id="@+id/textView5" />
 
         <TextView
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:inputType="textPostalAddress"
+            android:layout_marginLeft="20dp"
             android:ems="10"
             android:id="@+id/txtWeb"
             android:autoLink="all"
@@ -109,17 +125,20 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:padding="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Ratings"
+            android:textStyle="bold"
             android:id="@+id/textView6" />
 
         <RatingBar
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
             android:id="@+id/ratingBar"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
